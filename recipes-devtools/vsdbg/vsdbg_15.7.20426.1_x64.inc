@@ -1,8 +1,7 @@
 ###################################################################################################
-# Owner: Richard Dunkley
-# Description: Contains the URL and checksums to download version 15.7.20426.1 of the 64-bit Visual
-# Studio debugger from Microsoft.
-# Copyright: Richard Dunkley 2018
+# Contains the URL and checksums to download version 15.7.20426.1 of the 64-bit Visual Studio
+# debugger from Microsoft.
+# Copyright Richard Dunkley 2018
 ###################################################################################################
 SRC_URI = "https://vsdebugger.azureedge.net/vsdbg-15-7-20425-2/vsdbg-linux-x64.zip;subdir=vsdbg-${PV}"
 

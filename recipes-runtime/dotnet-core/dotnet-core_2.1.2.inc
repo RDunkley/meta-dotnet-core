@@ -1,8 +1,6 @@
 ###################################################################################################
-# Owner: Richard Dunkley
-# Description: Contains additional parameters for the recipe to download the release binaries
-# from Microsoft.
-# Copyright: Richard Dunkley 2018
+# Contains additional parameters for the recipe to download the release binaries from Microsoft.
+# Copyright Richard Dunkley 2018
 ###################################################################################################
 SUMMARY = "Contains the binaries for Microsoft's .NET Core 2.1.2"
 HOMEPAGE = "https://github.com/dotnet/core/blob/master/release-notes/download-archives/2.1.2-download.md"

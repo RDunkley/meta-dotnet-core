@@ -1,8 +1,6 @@
 ###################################################################################################
-# Owner: Richard Dunkley
-# Description: Contains additional parameters for the recipe to download the release binaries
-# from Microsoft.
-# Copyright: Richard Dunkley 2018
+# Contains additional parameters for the recipe to download the release binaries from Microsoft.
+# Copyright Richard Dunkley 2018
 ###################################################################################################
 SUMMARY = "Contains the binaries for Microsoft's Visual Studio Remote Debugger for Linux"
 HOMEPAGE = "https://visualstudio.microsoft.com/"

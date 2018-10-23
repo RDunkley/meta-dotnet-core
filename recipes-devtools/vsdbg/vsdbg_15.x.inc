@@ -1,8 +1,7 @@
 ###################################################################################################
-# Owner: Richard Dunkley
-# Description: Contains additional parameters for the recipe to download the Visual Studio Remote
-# debugger for all 15.x versions.
-# Copyright: Richard Dunkley 2018
+# Contains additional parameters for the recipe to download the Visual Studio Remote debugger for
+# all 15.x versions.
+# Copyright Richard Dunkley 2018
 ###################################################################################################
 DESCRIPTION = "This does not build this version, it only pulls the binaries from Microsoft"
 BUGTRACKER = "https://visualstudio.microsoft.com/"
@@ -45,9 +44,4 @@ do_install_prepend () {
 		install -m 0644 "$file" ${D}${ROOT_HOME}/vsdbg/
 	done
 }
-
-#do_install_append() {
-#    cd ${D}${bindir}
-#    ln -s ../share/dotnet/dotnet ${D}${bindir}/dotnet
-#}
 

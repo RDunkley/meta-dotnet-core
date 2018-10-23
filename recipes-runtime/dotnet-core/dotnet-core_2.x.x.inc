@@ -1,8 +1,7 @@
 ###################################################################################################
-# Owner: Richard Dunkley
-# Description: Contains additional parameters for the recipe to download the release binaries
-# from Microsoft pertaining to all 2.x.x versions.
-# Copyright: Richard Dunkley 2018
+# Contains additional parameters for the recipe to download the release binaries from Microsoft
+# pertaining to all 2.x.x versions.
+# Copyright Richard Dunkley 2018
 ###################################################################################################
 DESCRIPTION = "This does not build this version, it only pulls the binaries from Microsoft"
 BUGTRACKER = "https://github.com/dotnet/core/issues"
@@ -42,7 +41,7 @@ do_install_prepend () {
 	for file in ${S}/shared/Microsoft.NETCore.App/${PV}/*.so; do
 		install -m 0755 "$file" ${D}${datadir}/dotnet/shared/Microsoft.NETCore.App/${PV}/
 	done
-	for file in ${S}/shared/Microsoft.NETCore.App/${PV}/{*.dll,*.json,*.txt}; do
+	for file in ${S}/shared/Microsoft.NETCore.App/${PV}/{*.dll,*.json,*.txt,*.a}; do
 		install -m 0644 "$file" ${D}${datadir}/dotnet/shared/Microsoft.NETCore.App/${PV}/
 	done
 }
