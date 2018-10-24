@@ -9,7 +9,7 @@ SECTION = "runtime"
 
 S = "${WORKDIR}/vsdbg-${PV}"
 
-require recipes-runtime/vsdbg/vsdbg_license.inc
+require recipes-devtools/vsdbg/vsdbg_license.inc
 
 DEPENDS = "zlib"
 RDEPENDS_${PN} = "openssh openssh-sftp-server lttng-ust zlib curl libgssglue"
