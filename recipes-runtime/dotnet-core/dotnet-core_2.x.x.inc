@@ -12,7 +12,7 @@ S = "${WORKDIR}/dotnet-${PV}"
 require recipes-runtime/dotnet-core/dotnet-core_mit.inc
 
 DEPENDS = "zlib"
-RDEPENDS_${PN} = "dotnet-core-staticdev lttng-ust zlib curl libgssglue"
+RDEPENDS_${PN} = "dotnet-core-staticdev icu lttng-tools lttng-ust zlib curl libgssglue"
 
 INSANE_SKIP_${PN} += "already-stripped libdir textrel"
 INSANE_SKIP_${PN}-dbg += "libdir"

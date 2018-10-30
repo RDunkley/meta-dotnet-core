@@ -12,7 +12,7 @@ S = "${WORKDIR}/vsdbg-${PV}"
 require recipes-devtools/vsdbg/vsdbg_license.inc
 
 DEPENDS = "zlib"
-RDEPENDS_${PN} = "openssh openssh-sftp-server lttng-ust zlib curl libgssglue"
+RDEPENDS_${PN} = "openssh openssh-sftp-server icu lttng-tools lttng-ust zlib curl libgssglue"
 
 INSANE_SKIP_${PN} += "already-stripped libdir textrel"
 
@@ -26,22 +26,23 @@ FILES_${PN} += ""
 
 
 do_install_prepend () {
-	install -d ${D}${ROOT_HOME}/vsdbg/
-	install -m 0755 ${S}/vsdbg ${D}${ROOT_HOME}/vsdbg/
-	install -m 0644 ${S}/license.txt ${D}${ROOT_HOME}/vsdbg/
-	install -m 0644 ${S}/ThirdPartyNotices.txt ${D}${ROOT_HOME}/vsdbg/
-	install -m 0644 ${S}/version.txt ${D}${ROOT_HOME}/vsdbg/
+	install -d ${D}${ROOT_HOME}/.vs-debugger/vs2017u5/
+	install -m 0755 ${S}/vsdbg ${D}${ROOT_HOME}/.vs-debugger/vs2017u5/
+	install -m 0644 ${S}/license.txt ${D}${ROOT_HOME}/.vs-debugger/vs2017u5/
+	install -m 0644 ${S}/ThirdPartyNotices.txt ${D}${ROOT_HOME}/.vs-debugger/vs2017u5/
+	install -m 0644 ${S}/version.txt ${D}${ROOT_HOME}/.vs-debugger/vs2017u5/
 
-	install -d ${D}${ROOT_HOME}/vsdbg/1033/
+	install -d ${D}${ROOT_HOME}/.vs-debugger/vs2017u5/1033/
 	for file in ${S}/1033/*.dll; do
-		install -m 0644 "$file" ${D}${ROOT_HOME}/vsdbg/1033/
+		install -m 0644 "$file" ${D}${ROOT_HOME}/.vs-debugger/vs2017u5/1033/
 	done
 
 	for file in ${S}/*.so; do
-		install -m 0755 "$file" ${D}${ROOT_HOME}/vsdbg/
+		install -m 0755 "$file" ${D}${ROOT_HOME}/.vs-debugger/vs2017u5/
 	done
 	for file in ${S}/{*.dll,*.vsdconfig}; do
-		install -m 0644 "$file" ${D}${ROOT_HOME}/vsdbg/
+		install -m 0644 "$file" ${D}${ROOT_HOME}/.vs-debugger/vs2017u5/
 	done
+	echo "15.7.20425.2" > ${D}${ROOT_HOME}/.vs-debugger/vs2017u5/success.txt
 }
 
