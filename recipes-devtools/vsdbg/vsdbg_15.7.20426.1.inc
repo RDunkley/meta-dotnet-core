@@ -10,4 +10,4 @@ DOTNET_RUNTIME_ARCH_arm = "arm"
 DOTNET_RUNTIME_ARCH_x86_64 = "x64"
 
 # This is here because it doesn't seem like bitbake likes ${PV} used in require statements.
-require recipes-runtime/vsdbg/vsdbg_15.7.20426.1_${DOTNET_RUNTIME_ARCH}.inc
+require recipes-devtools/vsdbg/vsdbg_15.7.20426.1_${DOTNET_RUNTIME_ARCH}.inc

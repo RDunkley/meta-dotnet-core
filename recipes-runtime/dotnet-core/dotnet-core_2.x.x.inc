@@ -12,18 +12,34 @@ S = "${WORKDIR}/dotnet-${PV}"
 require recipes-runtime/dotnet-core/dotnet-core_mit.inc
 
 DEPENDS = "zlib"
-RDEPENDS_${PN} = "lttng-ust zlib curl libgssglue"
+RDEPENDS_${PN} = "dotnet-core-staticdev icu lttng-tools lttng-ust zlib curl libgssglue"
 
 INSANE_SKIP_${PN} += "already-stripped libdir textrel"
+INSANE_SKIP_${PN}-dbg += "libdir"
 
 do_configure[noexec] = "1"
 do_compile[noexec] = "1"
 
-PACKAGES = "${PN}-dbg ${PN}"
+#PACKAGES =+ "${PN}-dbg ${PN}-staticdev ${PN}"
 
-FILES_${PN} += "${datadir}"
-FILES_${PN} += ""
+#FILES_${PN} += "${datadir}"
+#FILES_${PN} += ""
 
+FILES_${PN} += " \
+	${datadir}/dotnet/dotnet \
+	${datadir}/dotnet/*.txt \
+	${datadir}/dotnet/host/fxr/${PV}/*.so \
+	${datadir}/dotnet/shared/Microsoft.NETCore.App/${PV}/.version \
+	${datadir}/dotnet/shared/Microsoft.NETCore.App/${PV}/*.so \
+	${datadir}/dotnet/shared/Microsoft.NETCore.App/${PV}/*.dll \
+	${datadir}/dotnet/shared/Microsoft.NETCore.App/${PV}/*.json \
+	${datadir}/dotnet/shared/Microsoft.NETCore.App/${PV}/*.txt \
+	"
+
+
+FILES_${PN}-staticdev += " \
+	${datadir}/dotnet/shared/Microsoft.NETCore.App/${PV}/*.a \
+	"
 
 do_install_prepend () {
 	install -d ${D}${bindir}

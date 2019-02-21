@@ -4,6 +4,6 @@
 # Copyright Richard Dunkley 2018
 ###################################################################################################
 
-require recipes-runtime/vsdbg/vsdbg_15.7.20426.1.inc
-require recipes-runtime/vsdbg/vsdbg_15.x.inc
+require recipes-devtools/vsdbg/vsdbg_15.7.20426.1.inc
+require recipes-devtools/vsdbg/vsdbg_15.x.inc
 

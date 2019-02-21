@@ -18,6 +18,11 @@ URI | Layers | Branch
 git://git.openembedded.org/bitbake | | rocko
 git://git.openembedded.org/openembedded-core | meta | rocko
 git://git.yoctoproject.org/meta | meta | rocko
+git://git.openembedded.org/meta-openembedded | meta-oe | rocko
+git://git.openembedded.org/meta-openembedded | meta-perl | rocko
+git://git.openembedded.org/meta-openembedded | meta-python | rocko
+git://git.openembedded.org/meta-openembedded | meta-networking | rocko
+git://git.yoctoproject.org/meta-security | meta-security | rocko
 
 ## Patches
 Please submit any patches against this layer using pull requests in github or open up an issue.
