@@ -9,7 +9,7 @@ SECTION = "runtime"
 
 S = "${WORKDIR}/dotnet-${PV}"
 
-require recipes-runtime/dotnet-core/dotnet-core_mit.inc
+require recipes-runtime/dotnet-core/dotnet-core_mit_2.x.x.inc
 
 DEPENDS = "zlib"
 RDEPENDS_${PN} = "dotnet-core-staticdev icu lttng-tools lttng-ust zlib curl libgssglue"

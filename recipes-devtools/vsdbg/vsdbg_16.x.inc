@@ -29,7 +29,7 @@ do_install_prepend () {
 	install -d ${D}${ROOT_HOME}/.vs-debugger/vs2019/
 	install -m 0755 ${S}/vsdbg ${D}${ROOT_HOME}/.vs-debugger/vs2019/
 	install -m 0644 ${S}/license.txt ${D}${ROOT_HOME}/.vs-debugger/vs2019/
-	install -m 0644 ${S}/ThirdPartyNotices.txt ${D}${ROOT_HOME}/.vs-debugger/vs2017u5/
+	install -m 0644 ${S}/ThirdPartyNotices.txt ${D}${ROOT_HOME}/.vs-debugger/vs2019/
 	install -m 0644 ${S}/version.txt ${D}${ROOT_HOME}/.vs-debugger/vs2019/
 
 	install -d ${D}${ROOT_HOME}/.vs-debugger/vs2019/1028/

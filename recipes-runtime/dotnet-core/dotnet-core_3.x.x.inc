@@ -9,7 +9,7 @@ SECTION = "runtime"
 
 S = "${WORKDIR}/dotnet-${PV}"
 
-require recipes-runtime/dotnet-core/dotnet-core_mit.inc
+require recipes-runtime/dotnet-core/dotnet-core_mit_3.x.x.inc
 
 DEPENDS = "zlib"
 RDEPENDS_${PN} = "dotnet-core-staticdev icu lttng-tools lttng-ust zlib curl libgssglue"
@@ -28,7 +28,7 @@ do_compile[noexec] = "1"
 FILES_${PN} += " \
 	${datadir}/dotnet/dotnet \
 	${datadir}/dotnet/*.txt \
-	${datadir}/dotnet/host/fxr/${PV}/*.so \
+	${datadir}/dotnet/host/fxr/${PV}-preview5-27626-15/*.so \
 	${datadir}/dotnet/shared/Microsoft.NETCore.App/${PV}-preview5-27626-15/.version \
 	${datadir}/dotnet/shared/Microsoft.NETCore.App/${PV}-preview5-27626-15/*.so \
 	${datadir}/dotnet/shared/Microsoft.NETCore.App/${PV}-preview5-27626-15/*.dll \
