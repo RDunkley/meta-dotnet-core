@@ -26,28 +26,28 @@ do_compile[noexec] = "1"
 #FILES_${PN} += ""
 
 FILES_${PN} += " \
-	${datadir}/aspnet/dotnet \
-	${datadir}/aspnet/*.txt \
-	${datadir}/aspnet/host/fxr/${PV}-preview5-27626-15/*.so \
-	${datadir}/aspnet/shared/Microsoft.AspNetCore.App/${PV}-preview5-19227-01/.version \
-	${datadir}/aspnet/shared/Microsoft.AspNetCore.App/${PV}-preview5-19227-01/*.dll \
-	${datadir}/aspnet/shared/Microsoft.AspNetCore.App/${PV}-preview5-19227-01/*.json \
-	${datadir}/aspnet/shared/Microsoft.NETCore.App/${PV}-preview5-27626-15/.version \
-	${datadir}/aspnet/shared/Microsoft.NETCore.App/${PV}-preview5-27626-15/*.so \
-	${datadir}/aspnet/shared/Microsoft.NETCore.App/${PV}-preview5-27626-15/*.dll \
-	${datadir}/aspnet/shared/Microsoft.NETCore.App/${PV}-preview5-27626-15/*.json \
-	${datadir}/aspnet/shared/Microsoft.NETCore.App/${PV}-preview5-27626-15/*.txt \
+	${datadir}/dotnet/dotnet \
+	${datadir}/dotnet/*.txt \
+	${datadir}/dotnet/host/fxr/${PV}-preview5-27626-15/*.so \
+	${datadir}/dotnet/shared/Microsoft.AspNetCore.App/${PV}-preview5-19227-01/.version \
+	${datadir}/dotnet/shared/Microsoft.AspNetCore.App/${PV}-preview5-19227-01/*.dll \
+	${datadir}/dotnet/shared/Microsoft.AspNetCore.App/${PV}-preview5-19227-01/*.json \
+	${datadir}/dotnet/shared/Microsoft.NETCore.App/${PV}-preview5-27626-15/.version \
+	${datadir}/dotnet/shared/Microsoft.NETCore.App/${PV}-preview5-27626-15/*.so \
+	${datadir}/dotnet/shared/Microsoft.NETCore.App/${PV}-preview5-27626-15/*.dll \
+	${datadir}/dotnet/shared/Microsoft.NETCore.App/${PV}-preview5-27626-15/*.json \
+	${datadir}/dotnet/shared/Microsoft.NETCore.App/${PV}-preview5-27626-15/*.txt \
 	"
 
 
 FILES_${PN}-staticdev += " \
-	${datadir}/aspnet/shared/Microsoft.NETCore.App/${PV}-preview5-27626-15/*.a \
+	${datadir}/dotnet/shared/Microsoft.NETCore.App/${PV}-preview5-27626-15/*.a \
 	"
 
 do_install_prepend () {
 	install -d ${D}${bindir}
 	install -d ${D}${datadir}/dotnet/
-	install -m 0755 ${S}/aspnet ${D}${datadir}/dotnet/
+	install -m 0755 ${S}/dotnet ${D}${datadir}/dotnet/
 	install -m 0644 ${S}/LICENSE.txt ${D}${datadir}/dotnet/
 	install -m 0644 ${S}/ThirdPartyNotices.txt ${D}${datadir}/dotnet/
 
