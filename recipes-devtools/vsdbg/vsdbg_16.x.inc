@@ -176,6 +176,5 @@ do_install_prepend () {
 	for file in ${S}/*.vsdconfig; do
 		install -m 0644 "$file" ${D}${ROOT_HOME}/.vs-debugger/vs2019/
 	done
-	echo "16.0.20419.1" > ${D}${ROOT_HOME}/.vs-debugger/vs2019/success.txt
 }
 
