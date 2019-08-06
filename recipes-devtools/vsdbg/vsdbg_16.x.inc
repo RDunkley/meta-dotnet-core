@@ -170,9 +170,12 @@ do_install_prepend () {
 	for file in ${S}/*.so; do
 		install -m 0755 "$file" ${D}${ROOT_HOME}/.vs-debugger/vs2019/
 	done
-	for file in ${S}/{*.dll,*.vsdconfig}; do
+	for file in ${S}/*.dll; do
 		install -m 0644 "$file" ${D}${ROOT_HOME}/.vs-debugger/vs2019/
 	done
-	echo "15.7.20425.2" > ${D}${ROOT_HOME}/.vs-debugger/vs2019/success.txt
+	for file in ${S}/*.vsdconfig; do
+		install -m 0644 "$file" ${D}${ROOT_HOME}/.vs-debugger/vs2019/
+	done
+	echo "16.0.20419.1" > ${D}${ROOT_HOME}/.vs-debugger/vs2019/success.txt
 }
 
