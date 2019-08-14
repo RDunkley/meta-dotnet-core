@@ -3,8 +3,8 @@
 # from Microsoft.
 # Copyright Richard Dunkley 2019
 ###################################################################################################
-SRC_URI = "https://download.visualstudio.microsoft.com/download/pr/fa0cd01b-c71c-40ed-bb78-1ff9acbfb8b2/e6510b76b6272bc7ce3f85e3a96ff9e1/dotnet-runtime-3.0.0-preview6-27804-01-linux-x64.tar.gz;subdir=dotnet-${PV}"
+SRC_URI = "https://download.visualstudio.microsoft.com/download/pr/3873ce54-438c-43bd-871b-0472e4d5462b/01353d2e8c4289bb344d935c4bf4de3e/dotnet-runtime-3.0.0-preview8-28405-07-linux-x64.tar.gz;subdir=dotnet-${PV}"
 
-SRC_URI[md5sum] = "4435756e0f2ae16652c719d868008f1e"
-SRC_URI[sha256sum] = "6d01cc42c560eae861091fed5d8285b08d43f08447169004a58643b3632086bd"
+SRC_URI[md5sum] = "fc7eb2bac762898da5af53f6b9f82fe0"
+SRC_URI[sha256sum] = "7aa76e1afeee69d5c007b2383b6b0f0fa16b3a87031979c242bb212856505a15"
 

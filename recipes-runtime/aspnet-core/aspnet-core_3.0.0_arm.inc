@@ -3,9 +3,9 @@
 # Microsoft.
 # Copyright Richard Dunkley 2019
 ###################################################################################################
-SRC_URI = "https://download.visualstudio.microsoft.com/download/pr/246ddf4f-e4b8-4306-8761-2dfbca37f7de/274b8c00abf99f374729e0534779951e/aspnetcore-runtime-3.0.0-preview6.19307.2-linux-arm.tar.gz;subdir=aspnet-${PV}"
+SRC_URI = "https://download.visualstudio.microsoft.com/download/pr/8b734651-326f-4eb4-8a75-da94e991a901/f404fe1e1a2e989cb2e7bde13a3a2be5/aspnetcore-runtime-3.0.0-preview8.19405.7-linux-arm.tar.gz;subdir=aspnet-${PV}"
 
-SRC_URI[md5sum] = "881faef29cf865f25384412d5a45a991"
-SRC_URI[sha256sum] = "e27e1b4c9f4e7627038ba3b2078322c8a158155a771d44e53da7e80375f2c9bc"
+SRC_URI[md5sum] = "c634a0124d0a476fe3bef1643b907cfc"
+SRC_URI[sha256sum] = "b7fdaf41a20a9bc1c861cfd0fbbc71a30e0d0ce2baa13bf7ad508e0a438ea0cb"
 
 
