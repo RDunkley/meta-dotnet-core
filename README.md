@@ -1,11 +1,15 @@
 # meta-dotnet-core
 BitBake recipes to use the pre-built binaries provided by Microsoft for the following applications:
 
-1. .Net Core 2.x
-2. Visual Studio Remote Debugger
+1. .Net Core 2.x and 3.x (Preview 6)
+2. ASP .Net Core 3.x (Preview 6)
+3. Visual Studio Remote Debugger (2017 and 2019)
   
-## .Net Core 2.x
+## .Net Core 2.x and 3.x
 This package will place the .Net Core 2.x runtime binaries into the image under /usr/share/dotnet. The package only supports X64 and ARM (32-bit and 64-bit) architectures. It does not build the runtime from source it only pulls the publicly available binaries. Add this package by adding "dotnet-core" to the CORE_IMAGE_EXTRA_INSTALL line of your local.conf file.
+
+## ASP .Net Core 3.x
+This package will place the ASP .Net Core 3.x runtime binaries into the image under /usr/share/dotnet. The package only supports X64 and ARM (32-bit and 64-bit) architectures. It does not build the runtime from source it only pulls the publicly available binaries. Add this package by adding "aspnet-core" to the CORE_IMAGE_EXTRA_INSTALL line of your local.conf file. This package also provides the .Net Core runtime environment so care should be taken to avoid adding this recipe and the .Net Core one (may add a PROVIDES virtual down the road).
 
 ## Visual Studio Remote Debugger
 This package will place the vsdbg runtime binaries into the image under the root's home folder. The package only supports X64 and ARM (32-bit only) architectures. It does not build these libraries from source. These binaries are not open source. Care should be taken to ensure the proprietary license can be adhered to for the given application. Add this package by adding "vsdbg" to the CORE_IMAGE_EXTRA_INSTALL line of your local.conf file.
@@ -15,14 +19,14 @@ This layer depends on:
 
 URI | Layers | Branch
 --- | ------ | ------
-git://git.openembedded.org/bitbake | | rocko
-git://git.openembedded.org/openembedded-core | meta | rocko
-git://git.yoctoproject.org/meta | meta | rocko
-git://git.openembedded.org/meta-openembedded | meta-oe | rocko
-git://git.openembedded.org/meta-openembedded | meta-perl | rocko
-git://git.openembedded.org/meta-openembedded | meta-python | rocko
-git://git.openembedded.org/meta-openembedded | meta-networking | rocko
-git://git.yoctoproject.org/meta-security | meta-security | rocko
+git://git.openembedded.org/bitbake | | sumo
+git://git.openembedded.org/openembedded-core | meta | sumo
+git://git.yoctoproject.org/meta | meta | sumo
+git://git.openembedded.org/meta-openembedded | meta-oe | sumo
+git://git.openembedded.org/meta-openembedded | meta-perl | sumo
+git://git.openembedded.org/meta-openembedded | meta-python | sumo
+git://git.openembedded.org/meta-openembedded | meta-networking | sumo
+git://git.yoctoproject.org/meta-security | meta-security | sumo
 
 ## Patches
 Please submit any patches against this layer using pull requests in github or open up an issue.
