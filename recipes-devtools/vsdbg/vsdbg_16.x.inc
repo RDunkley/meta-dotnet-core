@@ -31,6 +31,7 @@ do_install_prepend () {
 	install -m 0644 ${S}/license.txt ${D}${ROOT_HOME}/.vs-debugger/vs2019/
 	install -m 0644 ${S}/ThirdPartyNotices.txt ${D}${ROOT_HOME}/.vs-debugger/vs2019/
 	install -m 0644 ${S}/version.txt ${D}${ROOT_HOME}/.vs-debugger/vs2019/
+	install -m 0755 ${WORKDIR}/GetVsDbg.sh ${D}${ROOT_HOME}/.vs-debugger/
 
 	install -d ${D}${ROOT_HOME}/.vs-debugger/vs2019/1028/
 	for file in ${S}/1028/*.dll; do
