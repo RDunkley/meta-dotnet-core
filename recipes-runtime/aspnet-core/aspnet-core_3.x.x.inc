@@ -37,6 +37,7 @@ FILES_${PN} += " \
 	${datadir}/dotnet/shared/Microsoft.NETCore.App/${PV}-preview6-27804-01/*.dll \
 	${datadir}/dotnet/shared/Microsoft.NETCore.App/${PV}-preview6-27804-01/*.json \
 	${datadir}/dotnet/shared/Microsoft.NETCore.App/${PV}-preview6-27804-01/*.txt \
+	/usr/local/share/dotnet \
 	"
 
 
@@ -82,10 +83,16 @@ do_install_prepend () {
 	for file in ${S}/shared/Microsoft.NETCore.App/${PV}-preview6-27804-01/*.a; do
 		install -m 0644 "$file" ${D}${datadir}/dotnet/shared/Microsoft.NETCore.App/${PV}-preview6-27804-01/
 	done
+
+	install -d ${D}/usr/local/share
+
 }
 
 do_install_append() {
-    cd ${D}${bindir}
-    ln -s ../share/dotnet/dotnet ${D}${bindir}/dotnet
+	cd ${D}/usr/local/share
+	ln -s ../../share/dotnet ${D}/usr/local/share
+
+	cd ${D}${bindir}
+	ln -s ../share/dotnet/dotnet ${D}${bindir}/dotnet
 }
 
