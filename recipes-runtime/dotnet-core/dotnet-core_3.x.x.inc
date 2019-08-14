@@ -26,20 +26,12 @@ do_compile[noexec] = "1"
 #FILES_${PN} += ""
 
 FILES_${PN} += " \
-	${datadir}/dotnet/dotnet \
-	${datadir}/dotnet/*.txt \
-	${datadir}/dotnet/host/fxr/${PV}-preview6-27804-01/*.so \
-	${datadir}/dotnet/shared/Microsoft.NETCore.App/${PV}-preview6-27804-01/.version \
-	${datadir}/dotnet/shared/Microsoft.NETCore.App/${PV}-preview6-27804-01/*.so \
-	${datadir}/dotnet/shared/Microsoft.NETCore.App/${PV}-preview6-27804-01/*.dll \
-	${datadir}/dotnet/shared/Microsoft.NETCore.App/${PV}-preview6-27804-01/*.json \
-	${datadir}/dotnet/shared/Microsoft.NETCore.App/${PV}-preview6-27804-01/*.txt \
+	${datadir}/dotnet \
 	/usr/local/share/dotnet \
 	"
 
-
 FILES_${PN}-staticdev += " \
-	${datadir}/dotnet/shared/Microsoft.NETCore.App/${PV}-preview6-27804-01/*.a \
+	${datadir}/dotnet/shared/Microsoft.NETCore.App/${PV}-preview8-28405-07/*.a \
 	"
 
 do_install_prepend () {
@@ -49,26 +41,27 @@ do_install_prepend () {
 	install -m 0644 ${S}/LICENSE.txt ${D}${datadir}/dotnet/
 	install -m 0644 ${S}/ThirdPartyNotices.txt ${D}${datadir}/dotnet/
 
-	install -d ${D}${datadir}/dotnet/host/fxr/${PV}-preview6-27804-01/
-	install -m 0755 ${S}/host/fxr/${PV}-preview6-27804-01/libhostfxr.so ${D}${datadir}/dotnet/host/fxr/${PV}-preview6-27804-01/
+	install -d ${D}${datadir}/dotnet/host/fxr/${PV}-preview8-28405-07/
+	install -m 0755 ${S}/host/fxr/${PV}-preview8-28405-07/libhostfxr.so ${D}${datadir}/dotnet/host/fxr/${PV}-preview8-28405-07/
 
-	install -d ${D}${datadir}/dotnet/shared/Microsoft.NETCore.App/${PV}-preview6-27804-01/
+	install -d ${D}${datadir}/dotnet/shared/Microsoft.NETCore.App/${PV}-preview8-28405-07/
 	
-	install -m 0644 ${S}/shared/Microsoft.NETCore.App/${PV}-preview6-27804-01/.version ${D}${datadir}/dotnet/shared/Microsoft.NETCore.App/${PV}-preview6-27804-01/.version
-	for file in ${S}/shared/Microsoft.NETCore.App/${PV}-preview6-27804-01/*.so; do
-		install -m 0755 "$file" ${D}${datadir}/dotnet/shared/Microsoft.NETCore.App/${PV}-preview6-27804-01/
+	install -m 0644 ${S}/shared/Microsoft.NETCore.App/${PV}-preview8-28405-07/.version ${D}${datadir}/dotnet/shared/Microsoft.NETCore.App/${PV}-preview8-28405-07/.version
+	install -m 0755 ${S}/shared/Microsoft.NETCore.App/${PV}-preview8-28405-07/createdump ${D}${datadir}/dotnet/shared/Microsoft.NETCore.App/${PV}-preview8-28405-07/createdump
+	for file in ${S}/shared/Microsoft.NETCore.App/${PV}-preview8-28405-07/*.so; do
+		install -m 0755 "$file" ${D}${datadir}/dotnet/shared/Microsoft.NETCore.App/${PV}-preview8-28405-07/
 	done
-	for file in ${S}/shared/Microsoft.NETCore.App/${PV}-preview6-27804-01/*.dll; do
-		install -m 0644 "$file" ${D}${datadir}/dotnet/shared/Microsoft.NETCore.App/${PV}-preview6-27804-01/
+	for file in ${S}/shared/Microsoft.NETCore.App/${PV}-preview8-28405-07/*.dll; do
+		install -m 0644 "$file" ${D}${datadir}/dotnet/shared/Microsoft.NETCore.App/${PV}-preview8-28405-07/
 	done
-	for file in ${S}/shared/Microsoft.NETCore.App/${PV}-preview6-27804-01/*.json; do
-		install -m 0644 "$file" ${D}${datadir}/dotnet/shared/Microsoft.NETCore.App/${PV}-preview6-27804-01/
+	for file in ${S}/shared/Microsoft.NETCore.App/${PV}-preview8-28405-07/*.json; do
+		install -m 0644 "$file" ${D}${datadir}/dotnet/shared/Microsoft.NETCore.App/${PV}-preview8-28405-07/
 	done
-	for file in ${S}/shared/Microsoft.NETCore.App/${PV}-preview6-27804-01/*.txt; do
-		install -m 0644 "$file" ${D}${datadir}/dotnet/shared/Microsoft.NETCore.App/${PV}-preview6-27804-01/
+	for file in ${S}/shared/Microsoft.NETCore.App/${PV}-preview8-28405-07/*.md; do
+		install -m 0644 "$file" ${D}${datadir}/dotnet/shared/Microsoft.NETCore.App/${PV}-preview8-28405-07/
 	done
-	for file in ${S}/shared/Microsoft.NETCore.App/${PV}-preview6-27804-01/*.a; do
-		install -m 0644 "$file" ${D}${datadir}/dotnet/shared/Microsoft.NETCore.App/${PV}-preview6-27804-01/
+	for file in ${S}/shared/Microsoft.NETCore.App/${PV}-preview8-28405-07/*.a; do
+		install -m 0644 "$file" ${D}${datadir}/dotnet/shared/Microsoft.NETCore.App/${PV}-preview8-28405-07/
 	done
 
 	install -d ${D}/usr/local/share
