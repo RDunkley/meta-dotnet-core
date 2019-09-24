@@ -8,4 +8,3 @@ SRC_URI = "https://download.visualstudio.microsoft.com/download/pr/e9d4b012-a877
 SRC_URI[md5sum] = "2a66008fc52ada3c7fa15c6e443eccb2"
 SRC_URI[sha256sum] = "2b27a5ec9f18281d153318ac547167fd65902762980fc6c4ec916e305e40cb75"
 
-

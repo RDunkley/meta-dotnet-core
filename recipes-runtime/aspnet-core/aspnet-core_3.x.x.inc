@@ -42,7 +42,6 @@ FILES_${PN} += " \
 	/usr/local/share/dotnet \
 	"
 
-
 FILES_${PN}-staticdev += " \
 	${datadir}/dotnet/shared/Microsoft.NETCore.App/${PV}/*.a \
 	"
