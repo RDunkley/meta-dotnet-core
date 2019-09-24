@@ -4,6 +4,6 @@
 # Copyright Richard Dunkley 2019
 ###################################################################################################
 
-require recipes-devtools/vsdbg/vsdbg_16.2.10904.1.inc
+require recipes-devtools/vsdbg/vsdbg_16.3.10904.1.inc
 require recipes-devtools/vsdbg/vsdbg_16.x.inc
 
