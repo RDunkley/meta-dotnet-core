@@ -26,15 +26,7 @@ do_compile[noexec] = "1"
 #FILES_${PN} += ""
 
 FILES_${PN} += " \
-	${datadir}/dotnet/dotnet \
-	${datadir}/dotnet/*.txt \
-	${datadir}/dotnet/host/fxr/${PV}/*.so \
-	${datadir}/dotnet/shared/Microsoft.NETCore.App/${PV}/.version \
-	${datadir}/dotnet/shared/Microsoft.NETCore.App/${PV}/createdump \
-	${datadir}/dotnet/shared/Microsoft.NETCore.App/${PV}/*.so \
-	${datadir}/dotnet/shared/Microsoft.NETCore.App/${PV}/*.dll \
-	${datadir}/dotnet/shared/Microsoft.NETCore.App/${PV}/*.json \
-	${datadir}/dotnet/shared/Microsoft.NETCore.App/${PV}/*.txt \
+	${datadir}/dotnet \
 	/usr/local/share/dotnet \
 	"
 
@@ -65,7 +57,7 @@ do_install_prepend () {
 	for file in ${S}/shared/Microsoft.NETCore.App/${PV}/*.json; do
 		install -m 0644 "$file" ${D}${datadir}/dotnet/shared/Microsoft.NETCore.App/${PV}/
 	done
-	for file in ${S}/shared/Microsoft.NETCore.App/${PV}/*.txt; do
+	for file in ${S}/shared/Microsoft.NETCore.App/${PV}/*.md; do
 		install -m 0644 "$file" ${D}${datadir}/dotnet/shared/Microsoft.NETCore.App/${PV}/
 	done
 	for file in ${S}/shared/Microsoft.NETCore.App/${PV}/*.a; do
