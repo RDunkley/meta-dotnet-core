@@ -53,9 +53,6 @@ do_install_prepend () {
 	for file in ${S}/shared/Microsoft.AspNetCore.App/${PV}/*.json; do
 		install -m 0644 "$file" ${D}${datadir}/dotnet/shared/Microsoft.AspNetCore.App/${PV}/
 	done
-	for file in ${S}/shared/Microsoft.AspNetCore.App/${PV}/*.txt; do
-		install -m 0644 "$file" ${D}${datadir}/dotnet/shared/Microsoft.AspNetCore.App/${PV}/
-	done
 
 	install -d ${D}${datadir}/dotnet/shared/Microsoft.NETCore.App/${PV}/
 	
@@ -70,10 +67,10 @@ do_install_prepend () {
 	for file in ${S}/shared/Microsoft.NETCore.App/${PV}/*.json; do
 		install -m 0644 "$file" ${D}${datadir}/dotnet/shared/Microsoft.NETCore.App/${PV}/
 	done
-	for file in ${S}/shared/Microsoft.NETCore.App/${PV}/*.md; do
+	for file in ${S}/shared/Microsoft.NETCore.App/${PV}/*.a; do
 		install -m 0644 "$file" ${D}${datadir}/dotnet/shared/Microsoft.NETCore.App/${PV}/
 	done
-	for file in ${S}/shared/Microsoft.NETCore.App/${PV}/*.a; do
+	for file in ${S}/shared/Microsoft.NETCore.App/${PV}/*.txt; do
 		install -m 0644 "$file" ${D}${datadir}/dotnet/shared/Microsoft.NETCore.App/${PV}/
 	done
 
