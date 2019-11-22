@@ -9,7 +9,7 @@ SECTION = "runtime"
 
 S = "${WORKDIR}/aspnet-${PV}"
 
-require recipes-runtime/aspnet-core/aspnet-core_mit.inc
+require recipes-runtime/aspnet-core/aspnet-core_mit_3.x.x.inc
 
 DEPENDS = "zlib"
 RDEPENDS_${PN} = "aspnet-core-staticdev icu lttng-tools lttng-ust zlib curl libgssglue"
