@@ -57,7 +57,6 @@ do_install_prepend () {
 	install -d ${D}${datadir}/dotnet/shared/Microsoft.NETCore.App/${PV}/
 	
 	install -m 0644 ${S}/shared/Microsoft.NETCore.App/${PV}/.version ${D}${datadir}/dotnet/shared/Microsoft.NETCore.App/${PV}/.version
-	install -m 0644 ${S}/shared/Microsoft.NETCore.App/${PV}/createdump ${D}${datadir}/dotnet/shared/Microsoft.NETCore.App/${PV}/createdump
 	for file in ${S}/shared/Microsoft.NETCore.App/${PV}/*.so; do
 		install -m 0755 "$file" ${D}${datadir}/dotnet/shared/Microsoft.NETCore.App/${PV}/
 	done
