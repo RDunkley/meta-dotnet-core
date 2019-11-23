@@ -1,7 +1,7 @@
 ###################################################################################################
 # Contains additional parameters for the recipe to download the release binaries from Microsoft
-# pertaining to all 3.x.x versions.
-# Copyright Richard Dunkley 2019
+# pertaining to all 2.x.x versions.
+# Copyright Matthijs de Ridder 2019
 ###################################################################################################
 DESCRIPTION = "This does not build this version, it only pulls the binaries from Microsoft"
 BUGTRACKER = "https://github.com/aspnet/AspNetCore/issues"
@@ -9,7 +9,7 @@ SECTION = "runtime"
 
 S = "${WORKDIR}/aspnet-${PV}"
 
-require recipes-runtime/aspnet-core/aspnet-core_mit_3.x.x.inc
+require recipes-runtime/aspnet-core/aspnet-core_mit_2.x.x.inc
 
 DEPENDS = "zlib"
 RDEPENDS_${PN} = "aspnet-core-staticdev icu lttng-tools lttng-ust zlib curl libgssglue"
@@ -53,14 +53,10 @@ do_install_prepend () {
 	for file in ${S}/shared/Microsoft.AspNetCore.App/${PV}/*.json; do
 		install -m 0644 "$file" ${D}${datadir}/dotnet/shared/Microsoft.AspNetCore.App/${PV}/
 	done
-	for file in ${S}/shared/Microsoft.AspNetCore.App/${PV}/*.txt; do
-		install -m 0644 "$file" ${D}${datadir}/dotnet/shared/Microsoft.AspNetCore.App/${PV}/
-	done
 
 	install -d ${D}${datadir}/dotnet/shared/Microsoft.NETCore.App/${PV}/
 	
 	install -m 0644 ${S}/shared/Microsoft.NETCore.App/${PV}/.version ${D}${datadir}/dotnet/shared/Microsoft.NETCore.App/${PV}/.version
-	install -m 0644 ${S}/shared/Microsoft.NETCore.App/${PV}/createdump ${D}${datadir}/dotnet/shared/Microsoft.NETCore.App/${PV}/createdump
 	for file in ${S}/shared/Microsoft.NETCore.App/${PV}/*.so; do
 		install -m 0755 "$file" ${D}${datadir}/dotnet/shared/Microsoft.NETCore.App/${PV}/
 	done
@@ -70,10 +66,10 @@ do_install_prepend () {
 	for file in ${S}/shared/Microsoft.NETCore.App/${PV}/*.json; do
 		install -m 0644 "$file" ${D}${datadir}/dotnet/shared/Microsoft.NETCore.App/${PV}/
 	done
-	for file in ${S}/shared/Microsoft.NETCore.App/${PV}/*.md; do
+	for file in ${S}/shared/Microsoft.NETCore.App/${PV}/*.a; do
 		install -m 0644 "$file" ${D}${datadir}/dotnet/shared/Microsoft.NETCore.App/${PV}/
 	done
-	for file in ${S}/shared/Microsoft.NETCore.App/${PV}/*.a; do
+	for file in ${S}/shared/Microsoft.NETCore.App/${PV}/*.txt; do
 		install -m 0644 "$file" ${D}${datadir}/dotnet/shared/Microsoft.NETCore.App/${PV}/
 	done
 
