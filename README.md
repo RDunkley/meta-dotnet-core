@@ -1,8 +1,8 @@
 # meta-dotnet-core
 BitBake recipes to use the pre-built binaries provided by Microsoft for the following applications:
 
-1. .Net Core 2.x and 3.x (Preview 6)
-2. ASP .Net Core 3.x (Preview 6)
+1. .Net Core 2.x and 3.x
+2. ASP .Net Core 3.x
 3. Visual Studio Remote Debugger (2017 and 2019)
   
 ## .Net Core 2.x and 3.x
