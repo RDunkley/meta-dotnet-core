@@ -4,6 +4,6 @@
 # Copyright Matthijs de Ridder 2019
 ###################################################################################################
 
-require recipes-runtime/dotnet-core/dotnet-core_3.1.0.inc
+require recipes-runtime/dotnet-core/dotnet-core_3.1.1.inc
 require recipes-runtime/dotnet-core/dotnet-core_3.x.x.inc
 
