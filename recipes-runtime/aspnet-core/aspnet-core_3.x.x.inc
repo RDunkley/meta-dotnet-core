@@ -12,10 +12,11 @@ S = "${WORKDIR}/aspnet-${PV}"
 require recipes-runtime/aspnet-core/aspnet-core_mit_3.x.x.inc
 
 DEPENDS = "zlib"
-RDEPENDS_${PN} = "aspnet-core-staticdev icu lttng-tools lttng-ust zlib curl libgssglue"
+RDEPENDS_${PN} = "icu lttng-tools lttng-ust zlib curl libgssglue"
 
 INSANE_SKIP_${PN} += "already-stripped libdir textrel"
 INSANE_SKIP_${PN}-dbg += "libdir"
+INSANE_SKIP_${PN} += "staticdev"
 
 do_configure[noexec] = "1"
 do_compile[noexec] = "1"
@@ -28,10 +29,6 @@ do_compile[noexec] = "1"
 FILES_${PN} += " \
 	${datadir}/dotnet \
 	/usr/local/share/dotnet \
-	"
-
-FILES_${PN}-staticdev += " \
-	${datadir}/dotnet/shared/Microsoft.NETCore.App/${PV}/*.a \
 	"
 
 do_install_prepend () {
