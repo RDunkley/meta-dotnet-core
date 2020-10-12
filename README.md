@@ -5,11 +5,11 @@ BitBake recipes to use the pre-built binaries provided by Microsoft for the foll
 2. ASP .Net Core 3.x
 3. Visual Studio Remote Debugger (2017 and 2019)
   
-## .Net Core 2.x and 3.x
-This package will place the .Net Core 2.x runtime binaries into the image under /usr/share/dotnet. The package only supports X64 and ARM (32-bit and 64-bit) architectures. It does not build the runtime from source it only pulls the publicly available binaries. Add this package by adding "dotnet-core" to the CORE_IMAGE_EXTRA_INSTALL line of your local.conf file.
+## .Net Core 2.x, 3.x, and 5.x
+This package will place the .Net Core runtime binaries into the image under /usr/share/dotnet. The package only supports X64 and ARM (32-bit and 64-bit) architectures. It does not build the runtime from source it only pulls the publicly available binaries. Add this package by adding "dotnet-core" to the CORE_IMAGE_EXTRA_INSTALL line of your local.conf file. Note: 5.0.0 RC1 recipes have been added, but not tested yet.
 
-## ASP .Net Core 3.x
-This package will place the ASP .Net Core 3.x runtime binaries into the image under /usr/share/dotnet. The package only supports X64 and ARM (32-bit and 64-bit) architectures. It does not build the runtime from source it only pulls the publicly available binaries. Add this package by adding "aspnet-core" to the CORE_IMAGE_EXTRA_INSTALL line of your local.conf file. This package also provides the .Net Core runtime environment so care should be taken to avoid adding this recipe and the .Net Core one (may add a PROVIDES virtual down the road).
+## ASP .Net Core 2.x, 3.x, and 5.x
+This package will place the ASP .Net Core runtime binaries into the image under /usr/share/dotnet. The package only supports X64 and ARM (32-bit and 64-bit) architectures. It does not build the runtime from source it only pulls the publicly available binaries. Add this package by adding "aspnet-core" to the CORE_IMAGE_EXTRA_INSTALL line of your local.conf file. This package also provides the .Net Core runtime environment so care should be taken to avoid adding this recipe and the .Net Core one (may add a PROVIDES virtual down the road). Note: 5.0.0 RC1 recipes have been added, but not tested yet.
 
 ## Visual Studio Remote Debugger
 This package will place the vsdbg runtime binaries into the image under the root's home folder. The package only supports X64 and ARM (32-bit only) architectures for .Net Core 2.x and X64, ARM, and ARM64 for .Net Core 3.x. It does not build these libraries from source. These binaries are not open source. Care should be taken to ensure the proprietary license can be adhered to for the given application. Add this package by adding "vsdbg" to the CORE_IMAGE_EXTRA_INSTALL line of your local.conf file.
