@@ -12,7 +12,7 @@ S = "${WORKDIR}/vsdbg-${PV}"
 require recipes-devtools/vsdbg/vsdbg_license.inc
 
 DEPENDS = "zlib"
-RDEPENDS_${PN} = "openssh openssh-sftp-server icu lttng-tools lttng-ust zlib curl libgssglue"
+RDEPENDS_${PN} = "openssh openssh-sftp-server icu lttng-tools lttng-ust zlib curl libcurl libgssglue"
 
 INSANE_SKIP_${PN} += "already-stripped libdir textrel"
 
