@@ -38,37 +38,37 @@ do_install_prepend () {
 	install -m 0644 ${S}/LICENSE.txt ${D}${datadir}/dotnet/
 	install -m 0644 ${S}/ThirdPartyNotices.txt ${D}${datadir}/dotnet/
 
-	install -d ${D}${datadir}/dotnet/host/fxr/${PV}-rc.1.20451.14/
-	install -m 0755 ${S}/host/fxr/${PV}-rc.1.20451.14/libhostfxr.so ${D}${datadir}/dotnet/host/fxr/${PV}-rc.1.20451.14/
+	install -d ${D}${datadir}/dotnet/host/fxr/${PV}/
+	install -m 0755 ${S}/host/fxr/${PV}/libhostfxr.so ${D}${datadir}/dotnet/host/fxr/${PV}/
 
-	install -d ${D}${datadir}/dotnet/shared/Microsoft.AspNetCore.App/${PV}-rc.1.20451.17/
+	install -d ${D}${datadir}/dotnet/shared/Microsoft.AspNetCore.App/${PV}/
 	
-	install -m 0644 ${S}/shared/Microsoft.AspNetCore.App/${PV}-rc.1.20451.17/.version ${D}${datadir}/dotnet/shared/Microsoft.AspNetCore.App/${PV}-rc.1.20451.17/.version
-	for file in ${S}/shared/Microsoft.AspNetCore.App/${PV}-rc.1.20451.17/*.dll; do
-		install -m 0644 "$file" ${D}${datadir}/dotnet/shared/Microsoft.AspNetCore.App/${PV}-rc.1.20451.17/
+	install -m 0644 ${S}/shared/Microsoft.AspNetCore.App/${PV}/.version ${D}${datadir}/dotnet/shared/Microsoft.AspNetCore.App/${PV}/.version
+	for file in ${S}/shared/Microsoft.AspNetCore.App/${PV}/*.dll; do
+		install -m 0644 "$file" ${D}${datadir}/dotnet/shared/Microsoft.AspNetCore.App/${PV}/
 	done
-	for file in ${S}/shared/Microsoft.AspNetCore.App/${PV}-rc.1.20451.17/*.json; do
-		install -m 0644 "$file" ${D}${datadir}/dotnet/shared/Microsoft.AspNetCore.App/${PV}-rc.1.20451.17/
+	for file in ${S}/shared/Microsoft.AspNetCore.App/${PV}/*.json; do
+		install -m 0644 "$file" ${D}${datadir}/dotnet/shared/Microsoft.AspNetCore.App/${PV}/
 	done
-	for file in ${S}/shared/Microsoft.AspNetCore.App/${PV}-rc.1.20451.17/*.txt; do
-		install -m 0644 "$file" ${D}${datadir}/dotnet/shared/Microsoft.AspNetCore.App/${PV}-rc.1.20451.17/
+	for file in ${S}/shared/Microsoft.AspNetCore.App/${PV}/*.txt; do
+		install -m 0644 "$file" ${D}${datadir}/dotnet/shared/Microsoft.AspNetCore.App/${PV}/
 	done
 
-	install -d ${D}${datadir}/dotnet/shared/Microsoft.NETCore.App/${PV}-rc.1.20451.14/
+	install -d ${D}${datadir}/dotnet/shared/Microsoft.NETCore.App/${PV}/
 	
-	install -m 0644 ${S}/shared/Microsoft.NETCore.App/${PV}-rc.1.20451.14/.version ${D}${datadir}/dotnet/shared/Microsoft.NETCore.App/${PV}-rc.1.20451.14/.version
-	install -m 0644 ${S}/shared/Microsoft.NETCore.App/${PV}-rc.1.20451.14/createdump ${D}${datadir}/dotnet/shared/Microsoft.NETCore.App/${PV}-rc.1.20451.14/createdump
-	for file in ${S}/shared/Microsoft.NETCore.App/${PV}-rc.1.20451.14/*.so; do
-		install -m 0755 "$file" ${D}${datadir}/dotnet/shared/Microsoft.NETCore.App/${PV}-rc.1.20451.14/
+	install -m 0644 ${S}/shared/Microsoft.NETCore.App/${PV}/.version ${D}${datadir}/dotnet/shared/Microsoft.NETCore.App/${PV}/.version
+	install -m 0644 ${S}/shared/Microsoft.NETCore.App/${PV}/createdump ${D}${datadir}/dotnet/shared/Microsoft.NETCore.App/${PV}/createdump
+	for file in ${S}/shared/Microsoft.NETCore.App/${PV}/*.so; do
+		install -m 0755 "$file" ${D}${datadir}/dotnet/shared/Microsoft.NETCore.App/${PV}/
 	done
-	for file in ${S}/shared/Microsoft.NETCore.App/${PV}-rc.1.20451.14/*.dll; do
-		install -m 0644 "$file" ${D}${datadir}/dotnet/shared/Microsoft.NETCore.App/${PV}-rc.1.20451.14/
+	for file in ${S}/shared/Microsoft.NETCore.App/${PV}/*.dll; do
+		install -m 0644 "$file" ${D}${datadir}/dotnet/shared/Microsoft.NETCore.App/${PV}/
 	done
-	for file in ${S}/shared/Microsoft.NETCore.App/${PV}-rc.1.20451.14/*.json; do
-		install -m 0644 "$file" ${D}${datadir}/dotnet/shared/Microsoft.NETCore.App/${PV}-rc.1.20451.14/
+	for file in ${S}/shared/Microsoft.NETCore.App/${PV}/*.json; do
+		install -m 0644 "$file" ${D}${datadir}/dotnet/shared/Microsoft.NETCore.App/${PV}/
 	done
-	for file in ${S}/shared/Microsoft.NETCore.App/${PV}-rc.1.20451.14/*.a; do
-		install -m 0644 "$file" ${D}${datadir}/dotnet/shared/Microsoft.NETCore.App/${PV}-rc.1.20451.14/
+	for file in ${S}/shared/Microsoft.NETCore.App/${PV}/*.a; do
+		install -m 0644 "$file" ${D}${datadir}/dotnet/shared/Microsoft.NETCore.App/${PV}/
 	done
 
 	install -d ${D}/usr/local/share

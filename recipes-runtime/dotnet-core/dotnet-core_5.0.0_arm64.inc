@@ -3,8 +3,8 @@
 # from Microsoft.
 # Copyright Richard Dunkley 2020
 ###################################################################################################
-SRC_URI = "https://download.visualstudio.microsoft.com/download/pr/367623bd-affb-47ea-af65-466d6c002537/bae126bda0f016d1284402e73ab7d333/dotnet-runtime-5.0.0-rc.1.20451.14-linux-arm64.tar.gz;subdir=dotnet-${PV}"
+SRC_URI = "https://download.visualstudio.microsoft.com/download/pr/4b114207-eaa2-40fe-8524-bd3c56b2fd9a/1d74fdea8701948c0150c39645455b2f/dotnet-runtime-5.0.0-linux-arm64.tar.gz;subdir=dotnet-${PV}"
 
-SRC_URI[md5sum] = "dc252aec333747ae4e8257144372b18e"
-SRC_URI[sha256sum] = "750801691e173af32e6f0fdbef6b353a5ac9cfd1abad6a81cf008d8a992220c5"
+SRC_URI[md5sum] = "8f244ecdca537d7f4b6db3e08f11ed99"
+SRC_URI[sha256sum] = "14f79a0f1ad6c310482fe30783e6ba4f3a7db29a4195d10bf7df9f246f9aebdf"
 
