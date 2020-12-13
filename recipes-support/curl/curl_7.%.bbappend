@@ -10,9 +10,10 @@
 # (https://github.com/dotnet/core/issues/1367). jamespettigrew was the one who came up with the
 # solution. 
 #
-# Note: this may cause issues with other application looking for a version 4.
+# Note: this leaves the CURL_OPENSSL_4 intact so this shouldn't cause issues with other
+# applications looking for version 4.
 #
-# Copyright Richard Dunkley 2018
+# Copyright Richard Dunkley 2019
 ###################################################################################################
 
 FILESEXTRAPATHS_prepend := "${THISDIR}/curl:"
