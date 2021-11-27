@@ -1,14 +1,14 @@
 # meta-dotnet-core
 BitBake recipes to use the pre-built binaries provided by Microsoft for the following applications:
 
-1. .Net Core 2.x, 3.x, and 5.x
-2. ASP .Net Core 2.x, 3.x, and 5.x
+1. .Net Core 2.x, 3.x, and .Net 5.x, 6.x
+2. ASP .Net Core 2.x, 3.x, 5.x, and 6.x
 3. Visual Studio Remote Debugger (2017 and 2019)
   
-## .Net Core 2.x, 3.x, and 5.x
-This package will place the .Net Core runtime binaries into the image under /usr/share/dotnet. The package only supports X64 and ARM (32-bit and 64-bit) architectures. It does not build the runtime from source it only pulls the publicly available binaries. Add this package by adding "dotnet-core" to the CORE_IMAGE_EXTRA_INSTALL line of your local.conf file. Note: 5.0.0 RC1 recipes have been added, but not tested yet.
+## .Net Core 2.x, 3.x, and .Net 5.x, 6.x
+This package will place the .Net Core runtime binaries into the image under /usr/share/dotnet. The package only supports X64 and ARM (32-bit and 64-bit) architectures. It does not build the runtime from source. It only pulls the publicly available binaries. Add this package by adding "dotnet-core" to the CORE_IMAGE_EXTRA_INSTALL line of your local.conf file.
 
-## ASP .Net Core 2.x, 3.x, and 5.x
+## ASP .Net Core 2.x, 3.x, and .Net 5.x, 6.x
 This package will place the ASP .Net Core runtime binaries into the image under /usr/share/dotnet. The package only supports X64 and ARM (32-bit and 64-bit) architectures. It does not build the runtime from source it only pulls the publicly available binaries. Add this package by adding "aspnet-core" to the CORE_IMAGE_EXTRA_INSTALL line of your local.conf file. This package also provides the .Net Core runtime environment so care should be taken to avoid adding this recipe and the .Net Core one (may add a PROVIDES virtual down the road).
 
 ## Visual Studio Remote Debugger
@@ -51,13 +51,13 @@ Assuming the meta-dotnet-core layer exists at the top-level of your yocto build 
 ```
 
 ### 2. Curl Configuration and Modification
-The following must be added to your local.conf file to enable specific support that is required in curl:
+The following must be added to your local.conf file to enable specific support that is required in curl for 2.x and 3.x versions of .Net Core:
 
 ```
   PACKAGECONFIG_pn-curl = "vers krb5 ssl zlib ipv6"
 ```
 
-NOTE: this layer will modify the curl library to contain the CURL_OPENSSL_3 versioned symbols.
+NOTE: this layer will modify the curl library to contain the CURL_OPENSSL_3 versioned symbols. If .Net 5.x or 6.x is targetted then this bbappend can be disabled.
 
 ### 3. Specific Versions
 You can select a specific version by adding the following line to your local.conf file:
