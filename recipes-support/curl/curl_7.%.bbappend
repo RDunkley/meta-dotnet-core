@@ -16,12 +16,12 @@
 # Copyright Richard Dunkley 2019
 ###################################################################################################
 
-FILESEXTRAPATHS_prepend := "${THISDIR}/curl:"
+FILESEXTRAPATHS:prepend := "${THISDIR}/curl:"
 
 SRC_URI += "file://libcurl_vers_in.patch"
 
 
-PACKAGECONFIG_append = " vers"
+PACKAGECONFIG:append = " vers"
 PACKAGECONFIG[vers] = "--enable-versioned-symbols, --disable-versioned-symbols,"
 
 #PACKAGECONFIG ??= "${@bb.utils.contains("DISTRO_FEATURES", "ipv6", "

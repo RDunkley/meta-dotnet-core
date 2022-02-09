@@ -31,7 +31,7 @@ FILES_${PN} += " \
 	/usr/local/share/dotnet \
 	"
 
-do_install_prepend () {
+do_install:prepend () {
 	install -d ${D}${bindir}
 	install -d ${D}${datadir}/dotnet/
 	install -m 0755 ${S}/dotnet ${D}${datadir}/dotnet/
@@ -75,7 +75,7 @@ do_install_prepend () {
 
 }
 
-do_install_append() {
+do_install:append() {
 	cd ${D}/usr/local/share
 	ln -s ../../share/dotnet ${D}/usr/local/share
 
