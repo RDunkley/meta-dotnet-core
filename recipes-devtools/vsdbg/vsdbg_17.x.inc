@@ -12,20 +12,20 @@ S = "${WORKDIR}/vsdbg-${PV}"
 require recipes-devtools/vsdbg/vsdbg_license.inc
 
 DEPENDS = "zlib"
-RDEPENDS:${PN} = "openssh openssh-sftp-server icu lttng-tools lttng-ust zlib curl libcurl libgssglue libgssapi-krb5"
+RDEPENDS_${PN} = "openssh openssh-sftp-server icu lttng-tools lttng-ust zlib curl libcurl libgssglue libgssapi-krb5"
 
-INSANE_SKIP:${PN} += "already-stripped libdir textrel"
+INSANE_SKIP_${PN} += "already-stripped libdir textrel"
 
 do_configure[noexec] = "1"
 do_compile[noexec] = "1"
 
 PACKAGES = "${PN}-dbg ${PN}"
 
-FILES:${PN} += "${ROOT_HOME}"
-FILES:${PN} += ""
+FILES_${PN} += "${ROOT_HOME}"
+FILES_${PN} += ""
 
 
-do_install:prepend () {
+do_install_prepend () {
 	install -d ${D}${ROOT_HOME}/.vs-debugger/vs2022/
 	install -m 0755 ${S}/vsdbg ${D}${ROOT_HOME}/.vs-debugger/vs2022/
 	install -m 0644 ${S}/license.txt ${D}${ROOT_HOME}/.vs-debugger/vs2022/
