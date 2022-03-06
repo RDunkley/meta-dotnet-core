@@ -19,14 +19,14 @@ This layer depends on:
 
 URI | Layers | Branch
 --- | ------ | ------
-git://git.openembedded.org/bitbake | | thud
-git://git.openembedded.org/openembedded-core | meta | thud
-git://git.yoctoproject.org/meta | meta | thud
-git://git.openembedded.org/meta-openembedded | meta-oe | thud
-git://git.openembedded.org/meta-openembedded | meta-perl | thud
-git://git.openembedded.org/meta-openembedded | meta-python | thud
-git://git.openembedded.org/meta-openembedded | meta-networking | thud
-git://git.yoctoproject.org/meta-security | meta-security | thud
+git://git.openembedded.org/bitbake | | honister
+git://git.openembedded.org/openembedded-core | meta | honister
+git://git.yoctoproject.org/meta | meta | honister
+git://git.openembedded.org/meta-openembedded | meta-oe | honister
+git://git.openembedded.org/meta-openembedded | meta-perl | honister
+git://git.openembedded.org/meta-openembedded | meta-python | honister
+git://git.openembedded.org/meta-openembedded | meta-networking | honister
+git://git.yoctoproject.org/meta-security | meta-security | honister
 
 ## Patches
 Please submit any patches against this layer using pull requests in github or open up an issue.

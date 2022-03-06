@@ -12,19 +12,20 @@ S = "${WORKDIR}/aspnet-${PV}"
 require recipes-runtime/aspnet-core/aspnet-core_mit_6.x.x.inc
 
 DEPENDS = "zlib"
-RDEPENDS_${PN} = "lttng-tools lttng-ust zlib"
+RDEPENDS:${PN} = "lttng-tools lttng-ust zlib"
 
-INSANE_SKIP_${PN} += "already-stripped libdir textrel"
+INSANE_SKIP:${PN} += "already-stripped libdir textrel"
 
 do_configure[noexec] = "1"
 do_compile[noexec] = "1"
 
-FILES_${PN} += " \
+FILES:${PN} += " \
 	${datadir}/dotnet \
 	/usr/local/share/dotnet \
+	/usr/share/dotnet \
 	"
 
-do_install_prepend () {
+do_install:prepend () {
 	install -d ${D}${bindir}
 	install -d ${D}${datadir}/dotnet/
 	install -m 0755 ${S}/dotnet ${D}${datadir}/dotnet/
@@ -65,7 +66,7 @@ do_install_prepend () {
 
 }
 
-do_install_append() {
+do_install:append() {
 	cd ${D}/usr/local/share
 	ln -s ../../share/dotnet ${D}/usr/local/share
 
