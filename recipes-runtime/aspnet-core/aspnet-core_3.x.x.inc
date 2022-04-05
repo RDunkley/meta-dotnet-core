@@ -11,6 +11,8 @@ S = "${WORKDIR}/aspnet-${PV}"
 
 require recipes-runtime/aspnet-core/aspnet-core_mit_3.x.x.inc
 
+RPROVIDES:${PN} = "dotnet-core"
+
 DEPENDS = "zlib"
 RDEPENDS_${PN} = "icu lttng-tools lttng-ust zlib curl libgssglue"
 
