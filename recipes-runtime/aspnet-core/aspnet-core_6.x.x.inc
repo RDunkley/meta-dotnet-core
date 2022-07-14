@@ -11,6 +11,8 @@ S = "${WORKDIR}/aspnet-${PV}"
 
 require recipes-runtime/aspnet-core/aspnet-core_mit_6.x.x.inc
 
+RPROVIDES:${PN} = "dotnet-core"
+
 DEPENDS = "zlib"
 RDEPENDS:${PN} = "lttng-tools lttng-ust zlib"
 
