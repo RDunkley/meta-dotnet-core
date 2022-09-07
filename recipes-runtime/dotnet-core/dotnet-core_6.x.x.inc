@@ -12,7 +12,7 @@ S = "${WORKDIR}/dotnet-${PV}"
 require recipes-runtime/dotnet-core/dotnet-core_mit_6.x.x.inc
 
 DEPENDS = "zlib"
-RDEPENDS_${PN} = "lttng-tools lttng-ust zlib"
+RDEPENDS_${PN} = "lttng-tools lttng-ust zlib icu"
 
 INSANE_SKIP_${PN} += "already-stripped libdir textrel"
 
