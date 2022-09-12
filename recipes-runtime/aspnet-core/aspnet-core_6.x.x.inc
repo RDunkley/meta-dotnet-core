@@ -12,7 +12,7 @@ S = "${WORKDIR}/aspnet-${PV}"
 require recipes-runtime/aspnet-core/aspnet-core_mit_6.x.x.inc
 
 DEPENDS = "zlib"
-RDEPENDS_${PN} = "lttng-tools lttng-ust zlib icu"
+RDEPENDS_${PN} = "lttng-tools lttng-ust zlib icu libssl"
 
 INSANE_SKIP_${PN} += "already-stripped libdir textrel"
 
