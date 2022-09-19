@@ -54,7 +54,7 @@ Assuming the meta-dotnet-core layer exists at the top-level of your yocto build 
 The following must be added to your local.conf file to enable specific support that is required in curl for 2.x and 3.x versions of .Net Core:
 
 ```
-  PACKAGECONFIG_pn-curl = "vers krb5 ssl zlib ipv6"
+  PACKAGECONFIG:pn-curl = "vers krb5 ssl zlib ipv6"
 ```
 
 NOTE: this layer will modify the curl library to contain the CURL_OPENSSL_3 versioned symbols. If .Net 5.x or 6.x is targetted then this bbappend can be disabled.
