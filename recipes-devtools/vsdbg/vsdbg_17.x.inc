@@ -1,18 +1,25 @@
 ###################################################################################################
 # Contains additional parameters for the recipe to download the Visual Studio Remote debugger for
-# all 16.x versions.
-# Copyright Richard Dunkley 2019
+# all 17.x versions.
+# Copyright Richard Dunkley, Sequent Logic LLC 2022
 ###################################################################################################
 DESCRIPTION = "This does not build this version, it only pulls the binaries from Microsoft"
 BUGTRACKER = "https://visualstudio.microsoft.com/"
 SECTION = "runtime"
+LICENSE = "CLOSED"
+
+FILESEXTRAPATHS_prepend := "${THISDIR}/${PN}:"
+
+SRC_URI += " \
+	file://vsdbg.sh \
+	"
 
 S = "${WORKDIR}/vsdbg-${PV}"
 
 require recipes-devtools/vsdbg/vsdbg_license.inc
 
 DEPENDS = "zlib"
-RDEPENDS_${PN} = "openssh openssh-sftp-server icu lttng-tools lttng-ust zlib curl libcurl libgssglue libgssapi-krb5"
+RDEPENDS_${PN} = "openssh openssh-sftp-server icu zlib"
 
 INSANE_SKIP_${PN} += "already-stripped libdir textrel"
 
@@ -22,15 +29,21 @@ do_compile[noexec] = "1"
 PACKAGES = "${PN}-dbg ${PN}"
 
 FILES_${PN} += "${ROOT_HOME}"
-FILES_${PN} += ""
-
 
 do_install_prepend () {
 	install -d ${D}${ROOT_HOME}/.vs-debugger/vs2022/
-	install -m 0755 ${S}/vsdbg ${D}${ROOT_HOME}/.vs-debugger/vs2022/
+	install -d ${D}${ROOT_HOME}/.vs-debugger/
+
+	# Copy over the executable and then make a script to run it with certain
+	# environemental variables set.
+	install -m 0755 ${S}/vsdbg ${D}${ROOT_HOME}/.vs-debugger/vs2022/vsdbg2
+	install -m 0755 ${WORKDIR}/vsdbg.sh ${D}${ROOT_HOME}/.vs-debugger/vs2022/vsdbg
+	echo '${ROOT_HOME}/.vs-debugger/vs2022/vsdbg2' >> ${D}${ROOT_HOME}/.vs-debugger/vs2022/vsdbg
+
 	install -m 0644 ${S}/license.txt ${D}${ROOT_HOME}/.vs-debugger/vs2022/
 	install -m 0644 ${S}/ThirdPartyNotices.txt ${D}${ROOT_HOME}/.vs-debugger/vs2022/
 	install -m 0644 ${S}/version.txt ${D}${ROOT_HOME}/.vs-debugger/vs2022/
+	install -m 0644 ${S}/default.vsdbg-config.json ${D}${ROOT_HOME}/.vs-debugger/vs2022/
 	install -m 0755 ${WORKDIR}/GetVsDbg.sh ${D}${ROOT_HOME}/.vs-debugger/
 
 	install -d ${D}${ROOT_HOME}/.vs-debugger/vs2022/1028/
@@ -177,5 +190,9 @@ do_install_prepend () {
 	for file in ${S}/*.vsdconfig; do
 		install -m 0644 "$file" ${D}${ROOT_HOME}/.vs-debugger/vs2022/
 	done
+
+	# Setup a link so that vs2019 will also work.
+	cd ${D}${ROOT_HOME}/.vs-debugger/
+	ln -sf ${ROOT_HOME}/.vs-debugger/vs2022 vs2019
 }
 
