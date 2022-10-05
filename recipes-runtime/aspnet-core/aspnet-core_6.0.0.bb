@@ -6,3 +6,10 @@
 
 require recipes-runtime/aspnet-core/aspnet-core_6.0.0.inc
 require recipes-runtime/aspnet-core/aspnet-core_6.x.x.inc
+
+DEPENDS = "patchelf-native"
+
+do_install:append(){
+    # Hack to fix liblttng-ust dependency issues
+    patchelf --remove-needed liblttng-ust.so.0 ${D}${datadir}/dotnet/shared/Microsoft.NETCore.App/6.0.0/libcoreclrtraceptprovider.so
+}
