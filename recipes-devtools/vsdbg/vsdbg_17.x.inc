@@ -8,7 +8,7 @@ BUGTRACKER = "https://visualstudio.microsoft.com/"
 SECTION = "runtime"
 LICENSE = "CLOSED"
 
-FILESEXTRAPATHS_prepend := "${THISDIR}/${PN}:"
+FILESEXTRAPATHS:prepend := "${THISDIR}/${PN}:"
 
 SRC_URI += " \
 	file://vsdbg.sh \
@@ -20,6 +20,7 @@ require recipes-devtools/vsdbg/vsdbg_license.inc
 
 DEPENDS = "zlib"
 RDEPENDS:${PN} = "openssh openssh-sftp-server icu zlib"
+#RDEPENDS:${PN} = "openssh openssh-sftp-server icu lttng-tools lttng-ust zlib curl libcurl libgssglue libgssapi-krb5"
 
 INSANE_SKIP:${PN} += "already-stripped libdir textrel"
 
