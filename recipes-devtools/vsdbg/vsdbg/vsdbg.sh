@@ -1,0 +1,3 @@
+export DOTNET_SYSTEM_GLOBALIZATION_INVARIANT=true
+export DOTNET_EnableDiagnostics=1
+
