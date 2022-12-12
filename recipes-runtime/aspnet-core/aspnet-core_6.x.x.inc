@@ -11,7 +11,7 @@ S = "${WORKDIR}/aspnet-${PV}"
 
 require recipes-runtime/aspnet-core/aspnet-core_mit_6.x.x.inc
 
-DEPENDS = "zlib"
+DEPENDS = "zlib patchelf-native"
 RDEPENDS:${PN} = "lttng-tools lttng-ust zlib icu libssl"
 
 INSANE_SKIP:${PN} += "already-stripped libdir textrel"
@@ -71,5 +71,8 @@ do_install:append() {
 
 	cd ${D}${bindir}
 	ln -s ../share/dotnet/dotnet ${D}${bindir}/dotnet
+
+    # Hack to fix liblttng-ust dependency issues
+    patchelf --remove-needed liblttng-ust.so.0 ${D}${datadir}/dotnet/shared/Microsoft.NETCore.App/${PV}/libcoreclrtraceptprovider.so
 }
 
