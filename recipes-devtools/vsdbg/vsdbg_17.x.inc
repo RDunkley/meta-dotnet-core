@@ -191,9 +191,5 @@ do_install:prepend () {
 	for file in ${S}/*.vsdconfig; do
 		install -m 0644 "$file" ${D}${ROOT_HOME}/.vs-debugger/vs2022/
 	done
-
-	# Setup a link so that vs2019 will also work.
-	cd ${D}${ROOT_HOME}/.vs-debugger/
-	ln -sf ${ROOT_HOME}/.vs-debugger/vs2022 vs2019
 }
 
