@@ -16,16 +16,16 @@
 # Copyright Richard Dunkley 2019
 ###################################################################################################
 
-FILESEXTRAPATHS_prepend := "${THISDIR}/curl:"
+FILESEXTRAPATHS:prepend := "${THISDIR}/curl:"
 
 SRC_URI += "file://libcurl_vers_in.patch"
 
 
-PACKAGECONFIG_append = " vers"
+PACKAGECONFIG:append = " vers"
 PACKAGECONFIG[vers] = "--enable-versioned-symbols, --disable-versioned-symbols,"
 
 #PACKAGECONFIG ??= "${@bb.utils.contains("DISTRO_FEATURES", "ipv6", "
-#PACKAGECONFIG_append_pn-curl = " ssl"
+#PACKAGECONFIG:append:pn-curl = " ssl"
 
-#PACKAGECONFIG_append_class-target = " ssl"
+#PACKAGECONFIG:append:class-target = " ssl"
 #PACKAGECONFIG ??= "${@bb.utils.filter('DISTRO_FEATURES', 'ipv6', d)} gnutls proxy threaded-resolver zlib ssl"

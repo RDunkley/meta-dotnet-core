@@ -12,21 +12,21 @@ S = "${WORKDIR}/dotnet-${PV}"
 require recipes-runtime/dotnet-core/dotnet-core_mit_2.x.x.inc
 
 DEPENDS = "zlib"
-RDEPENDS_${PN} = "icu lttng-tools lttng-ust zlib curl libgssglue"
+RDEPENDS:${PN} = "icu lttng-tools lttng-ust zlib curl libgssglue"
 
-INSANE_SKIP_${PN} += "already-stripped libdir textrel"
-INSANE_SKIP_${PN}-dbg += "libdir"
-INSANE_SKIP_${PN} += "staticdev"
+INSANE_SKIP:${PN} += "already-stripped libdir textrel"
+INSANE_SKIP:${PN}-dbg += "libdir"
+INSANE_SKIP:${PN} += "staticdev"
 
 do_configure[noexec] = "1"
 do_compile[noexec] = "1"
 
 #PACKAGES =+ "${PN}-dbg ${PN}-staticdev ${PN}"
 
-#FILES_${PN} += "${datadir}"
-#FILES_${PN} += ""
+#FILES:${PN} += "${datadir}"
+#FILES:${PN} += ""
 
-FILES_${PN} += " \
+FILES:${PN} += " \
 	${datadir}/dotnet/dotnet \
 	${datadir}/dotnet/*.txt \
 	${datadir}/dotnet/host/fxr/${PV}/*.so \
@@ -38,7 +38,7 @@ FILES_${PN} += " \
 	/usr/local/share/dotnet \
 	"
 
-do_install_prepend () {
+do_install:prepend () {
 	install -d ${D}${bindir}
 	install -d ${D}${datadir}/dotnet/
 	install -m 0755 ${S}/dotnet ${D}${datadir}/dotnet/
@@ -62,7 +62,7 @@ do_install_prepend () {
 
 }
 
-do_install_append() {
+do_install:append() {
 	cd ${D}/usr/local/share
 	ln -s ../../share/dotnet ${D}/usr/local/share
 
