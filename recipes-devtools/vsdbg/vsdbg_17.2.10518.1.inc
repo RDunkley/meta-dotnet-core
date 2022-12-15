@@ -9,7 +9,7 @@ SRC_URI += "https://vsdebugger.blob.core.windows.net/vsdbg-17-2-10518-1/GetVsDbg
 SRC_URI[script.md5sum] = "76ffe243ffb06b6b1a8a7f8c7bf31776"
 SRC_URI[script.sha256sum] = "2608424ae05550a24ac9b767a997635de1e87fe551156536d03356da421f4c64"
 
-RDEPENDS_${PN} += " procps"
+RDEPENDS_${PN} += "procps openssh-sftp-server"
 
 DOTNET_RUNTIME_ARCH = "none"
 DOTNET_RUNTIME_ARCH_arm = "arm"
