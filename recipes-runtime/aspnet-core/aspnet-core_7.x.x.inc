@@ -11,21 +11,22 @@ S = "${WORKDIR}/aspnet-${PV}"
 
 require recipes-runtime/aspnet-core/aspnet-core_mit_7.x.x.inc
 
-DEPENDS = "zlib"
-RDEPENDS_${PN} = "lttng-tools lttng-ust zlib icu libssl"
+# FIXME: patchelf-native must be removed if hack in do_install:append not required
+DEPENDS = "zlib patchelf-native"
+RDEPENDS:${PN} = "lttng-tools lttng-ust zlib icu libssl"
 
-INSANE_SKIP_${PN} += "already-stripped libdir textrel"
-INSANE_SKIP_${PN}-dbg += "libdir"
+INSANE_SKIP:${PN} += "already-stripped libdir textrel"
+INSANE_SKIP:${PN}-dbg += "libdir"
 
 do_configure[noexec] = "1"
 do_compile[noexec] = "1"
 
-FILES_${PN} += " \
+FILES:${PN} += " \
 	${datadir}/dotnet \
 	/usr/local/share/dotnet \
 	"
 
-do_install_prepend () {
+do_install:prepend () {
 	install -d ${D}${bindir}
 	install -d ${D}${datadir}/dotnet/
 	install -m 0755 ${S}/dotnet ${D}${datadir}/dotnet/
@@ -66,11 +67,15 @@ do_install_prepend () {
 
 }
 
-do_install_append() {
+do_install:append() {
 	cd ${D}/usr/local/share
 	ln -s ../../share/dotnet ${D}/usr/local/share
 
 	cd ${D}${bindir}
 	ln -s ../share/dotnet/dotnet ${D}${bindir}/dotnet
+    
+    # FIXME: must be removed if the liblttng-ust library issue was fixed
+    # Hack to fix liblttng-ust dependency issues
+    patchelf --remove-needed liblttng-ust.so.0 ${D}${datadir}/dotnet/shared/Microsoft.NETCore.App/${PV}/libcoreclrtraceptprovider.so
 }
 

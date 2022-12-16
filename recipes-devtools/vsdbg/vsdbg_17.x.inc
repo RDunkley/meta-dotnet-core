@@ -8,7 +8,7 @@ BUGTRACKER = "https://visualstudio.microsoft.com/"
 SECTION = "runtime"
 LICENSE = "CLOSED"
 
-FILESEXTRAPATHS_prepend := "${THISDIR}/${PN}:"
+FILESEXTRAPATHS:prepend := "${THISDIR}/${PN}:"
 
 SRC_URI += " \
 	file://vsdbg.sh \
@@ -19,18 +19,19 @@ S = "${WORKDIR}/vsdbg-${PV}"
 require recipes-devtools/vsdbg/vsdbg_license.inc
 
 DEPENDS = "zlib"
-RDEPENDS_${PN} = "openssh openssh-sftp-server icu zlib"
+RDEPENDS:${PN} = "openssh openssh-sftp-server icu zlib"
+#RDEPENDS:${PN} = "openssh openssh-sftp-server icu lttng-tools lttng-ust zlib curl libcurl libgssglue libgssapi-krb5"
 
-INSANE_SKIP_${PN} += "already-stripped libdir textrel"
+INSANE_SKIP:${PN} += "already-stripped libdir textrel"
 
 do_configure[noexec] = "1"
 do_compile[noexec] = "1"
 
 PACKAGES = "${PN}-dbg ${PN}"
 
-FILES_${PN} += "${ROOT_HOME}"
+FILES:${PN} += "${ROOT_HOME}"
 
-do_install_prepend () {
+do_install:prepend () {
 	install -d ${D}${ROOT_HOME}/.vs-debugger/vs2022/
 	install -d ${D}${ROOT_HOME}/.vs-debugger/
 
