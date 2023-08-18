@@ -3,7 +3,7 @@
 # from Microsoft.
 # Copyright Sequent Logic 2022
 ###################################################################################################
-SRC_URI = "https://download.visualstudio.microsoft.com/download/pr/265a56e6-bb98-4b17-948b-bf9884ee3bb3/e2a2587b9a964d155763b706dffaeb8b/dotnet-sdk-6.0.406-linux-x64.tar.gz;subdir=aspnet-${PV}"
+SRC_URI = "https://download.visualstudio.microsoft.com/download/pr/092f7e69-2e23-40b3-8f36-628d25ac7109/4995e4e141b26ea049163af84592222c/aspnetcore-runtime-6.0.14-linux-x64.tar.gz;subdir=aspnet-${PV}"
 
-SRC_URI[md5sum] = "fb0313d724c69fb4a32a98529483c85d"
-SRC_URI[sha256sum] = "adf66cd85cc023de2b60347f8773eaf1d2e07697ca73b035da9f0a3b1cee7021"
+SRC_URI[md5sum] = "7b28314c770497434a68bdd3b05f6e77"
+SRC_URI[sha256sum] = "721dc8e29892dcaaaab4bc7d2e8630a98d349f2d832855156f7b7898d1a55b07"
