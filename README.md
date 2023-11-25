@@ -2,7 +2,7 @@
 BitBake recipes to use the pre-built binaries provided by Microsoft for the following applications:
 
 1. .Net Core 2.x, 3.x, (Use pre-honister branch)
-2. .Net 5.x, 6.x, and 7.x
+2. .Net 5.x, 6.x, 7.x, and 8.x
 3. ASP .Net Core 2.x, 3.x (Use pre-honister branch)
 4. .Net 5.x, 6.x, 7.x, and 8.x
 3. Visual Studio Remote Debugger (2017, 2019, and 2022)
