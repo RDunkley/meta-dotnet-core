@@ -4,13 +4,13 @@ BitBake recipes to use the pre-built binaries provided by Microsoft for the foll
 1. .Net Core 2.x, 3.x, (Use pre-honister branch)
 2. .Net 5.x, 6.x, and 7.x
 3. ASP .Net Core 2.x, 3.x (Use pre-honister branch)
-4. .Net 5.x, 6.x, and 7.x
+4. .Net 5.x, 6.x, 7.x, and 8.x
 3. Visual Studio Remote Debugger (2017, 2019, and 2022)
   
-## .Net Core 2.x, 3.x, and .Net 5.x, 6.x, 7.x
+## .Net Core 2.x, 3.x, and .Net 5.x, 6.x, 7.x, 8.x
 This package will place the .Net Core runtime binaries into the image under /usr/share/dotnet. The package only supports X64 and ARM (32-bit and 64-bit) architectures. It does not build the runtime from source. It only pulls the publicly available binaries. Add this package by adding "dotnet-core" to the CORE_IMAGE_EXTRA_INSTALL line of your local.conf file.
 
-## ASP .Net Core 2.x, 3.x, and .Net 5.x, 6.x, 7.x
+## ASP .Net Core 2.x, 3.x, and .Net 5.x, 6.x, 7.x, 8.x
 This package will place the ASP .Net Core runtime binaries into the image under /usr/share/dotnet. The package only supports X64 and ARM (32-bit and 64-bit) architectures. It does not build the runtime from source it only pulls the publicly available binaries. Add this package by adding "aspnet-core" to the CORE_IMAGE_EXTRA_INSTALL line of your local.conf file. This package also provides the .Net Core runtime environment so care should be taken to avoid adding this recipe and the .Net Core one (may add a PROVIDES virtual down the road).
 
 ## Visual Studio Remote Debugger
