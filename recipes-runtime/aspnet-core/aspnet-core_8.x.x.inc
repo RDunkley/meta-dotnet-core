@@ -13,7 +13,7 @@ require recipes-runtime/aspnet-core/aspnet-core_mit_8.x.x.inc
 
 # FIXME: patchelf-native must be removed if hack in do_install:append not required
 DEPENDS = "zlib patchelf-native"
-RDEPENDS:${PN} = "lttng-tools lttng-ust zlib icu libssl"
+RDEPENDS:${PN} = "zlib icu libssl krb5"
 
 INSANE_SKIP:${PN} += "already-stripped libdir textrel"
 INSANE_SKIP:${PN}-dbg += "libdir"
