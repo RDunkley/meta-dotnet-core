@@ -13,7 +13,7 @@ require recipes-runtime/dotnet-core/dotnet-core_mit_8.x.x.inc
 
 # FIXME: patchelf-native must be removed if hack in do_install:append not required
 DEPENDS = "zlib patchelf-native"
-RDEPENDS:${PN} = "lttng-tools lttng-ust zlib icu libssl"
+RDEPENDS:${PN} = "zlib icu libssl krb5"
 
 INSANE_SKIP:${PN} += "already-stripped libdir textrel"
 INSANE_SKIP:${PN}-dbg += "libdir"
@@ -60,9 +60,5 @@ do_install:append() {
 
 	cd ${D}${bindir}
 	ln -s ../share/dotnet/dotnet ${D}${bindir}/dotnet
-
-    # FIXME: must be removed if the liblttng-ust library issue was fixed
-    # Hack to fix liblttng-ust dependency issues
-    patchelf --remove-needed liblttng-ust.so.0 ${D}${datadir}/dotnet/shared/Microsoft.NETCore.App/${PV}/libcoreclrtraceptprovider.so
 }
 
