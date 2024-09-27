@@ -37,7 +37,7 @@ do_install:prepend () {
 	install -m 0755 ${S}/host/fxr/${PV}/libhostfxr.so ${D}${datadir}/dotnet/host/fxr/${PV}/
 
 	install -d ${D}${datadir}/dotnet/shared/Microsoft.AspNetCore.App/${PV}/
-	
+
 	install -m 0644 ${S}/shared/Microsoft.AspNetCore.App/${PV}/.version ${D}${datadir}/dotnet/shared/Microsoft.AspNetCore.App/${PV}/.version
 	for file in ${S}/shared/Microsoft.AspNetCore.App/${PV}/*.dll; do
 		install -m 0644 "$file" ${D}${datadir}/dotnet/shared/Microsoft.AspNetCore.App/${PV}/
@@ -50,7 +50,7 @@ do_install:prepend () {
 	done
 
 	install -d ${D}${datadir}/dotnet/shared/Microsoft.NETCore.App/${PV}/
-	
+
 	install -m 0644 ${S}/shared/Microsoft.NETCore.App/${PV}/.version ${D}${datadir}/dotnet/shared/Microsoft.NETCore.App/${PV}/.version
 	install -m 0644 ${S}/shared/Microsoft.NETCore.App/${PV}/createdump ${D}${datadir}/dotnet/shared/Microsoft.NETCore.App/${PV}/createdump
 	for file in ${S}/shared/Microsoft.NETCore.App/${PV}/*.so; do
@@ -73,9 +73,9 @@ do_install:append() {
 
 	cd ${D}${bindir}
 	ln -s ../share/dotnet/dotnet ${D}${bindir}/dotnet
-    
-    # FIXME: must be removed if the liblttng-ust library issue was fixed
-    # Hack to fix liblttng-ust dependency issues
-    patchelf --remove-needed liblttng-ust.so.0 ${D}${datadir}/dotnet/shared/Microsoft.NETCore.App/${PV}/libcoreclrtraceptprovider.so
+
+	# FIXME: must be removed if the liblttng-ust library issue was fixed
+	# Hack to fix liblttng-ust dependency issues
+	patchelf --remove-needed liblttng-ust.so.0 ${D}${datadir}/dotnet/shared/Microsoft.NETCore.App/${PV}/libcoreclrtraceptprovider.so
 }
 
