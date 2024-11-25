@@ -118,4 +118,99 @@ For example:
 PREFERRED_VERSION_dotnet-core = "5.0.0"
 ```
 
+### 4. Adding a New Version
+The 'list_deps.sh' script can be used to parse a new major version and determine the dependencies.
+1. Download the new major version.
+2. Extract the contents to a folder.
+3. Run the dependency script on the folder (Ex: ./list_deps.sh <asp_net_core_folder>).
+4. The script should output all the unique dependencies on all the native executables and shared objects in the folders.
+5. Ignore any dependencies that are local to the package (Ex: libmscordaccore.so).
+Below is a list of the dependencies found in each major version:
 
+#### 2.0
+libdl.so.2
+libpthread.so.0
+libstdc++.so.6
+libm.so.6
+libgcc_s.so.1
+libc.so.6
+ld-linux-armhf.so.3
+librt.so.1
+liblttng-ust.so.0
+libz.so.1
+libcurl.so.4
+libgssapi_krb5.so.2
+
+#### 3.0
+libgcc_s.so.1
+libpthread.so.0
+librt.so.1
+libdl.so.2
+libstdc++.so.6
+libm.so.6
+libc.so.6
+ld-linux-armhf.so.3
+liblttng-ust.so.0
+libz.so.1
+libcurl.so.4
+libgssapi_krb5.so.2
+
+#### 5.0
+linux-vdso.so.1
+libpthread.so.0
+libdl.so.2
+libstdc++.so.6
+libm.so.6
+libgcc.s.so.1
+libc.so.6
+ld-linux-x86-64.so.2
+librt.so.1
+liblttng-ust.so.0
+libz.so.1
+libgssapi_krb5.so.2
+libkrb5.so.3
+libk5crypto.so.3
+libcom_err.so.2
+libkrb5support.so.0
+libkeyutils.so.1
+libresolv.so.2
+libselinux.so.1
+libpcre.so.1
+
+#### 6.0
+linux-vdso.so.1
+libpthread.so.0
+libdl.so.2
+libstdc++.so.6
+libm.so.6
+libgcc.s.so.1
+libc.so.6
+ld-linux-x86-64.so.2
+librt.so.1
+liblttng-ust.so.0
+libz.so.1
+
+#### 8.0
+linux-vdso.so.1
+libpthread.so.0
+libdl.so.2
+libstdc++.so.6
+libm.so.6
+libgcc.s.so.1
+libc.so.6
+ld-linux-x86-64.so.2
+librt.so.1
+liblttng-ust.so.0
+libz.so.1
+
+#### 9.0
+linux-vdso.so.1
+libpthread.so.0
+libdl.so.2
+libstdc++.so.6
+libm.so.6
+libgcc.s.so.1
+libc.so.6
+ld-linux-x86-64.so.2
+librt.so.1
+liblttng-ust.so.0
