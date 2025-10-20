@@ -4,7 +4,7 @@
 # Copyright Sequent Logic, LLC 2025
 # Auto-generated using meta_dotnet_core_gen
 ###################################################################################################
-SRC_URI = "https://download.visualstudio.microsoft.com/download/pr/e42f6ab0-c3df-46db-83dc-47205f5cb6fd/0c1cf07866e0674a18748cfed2b747b2/dotnet-runtime-8.0.13-linux-arm.tar.gz;subdir=dotnet-${PV}"
+SRC_URI = "https://builds.dotnet.microsoft.com/dotnet/Runtime/8.0.13/dotnet-runtime-8.0.13-linux-arm.tar.gz;subdir=dotnet-${PV}"
 
 # SHA-512 hash is '5d018fb50eea96f3e9a56142202ccb1c73a725219d7257b0debbeef3ef196c69b076b98dfb6f098818c0514084df33f6704bc13a478d1727b012d6ba9eea0492'
 

@@ -4,7 +4,7 @@
 # Copyright Sequent Logic, LLC 2025
 # Auto-generated using meta_dotnet_core_gen
 ###################################################################################################
-SRC_URI = "https://download.visualstudio.microsoft.com/download/pr/8953c6fe-3542-4cee-b022-a50e029882a5/1bbce821b1ae97ed11b305dd708c0437/aspnetcore-runtime-8.0.12-linux-arm64.tar.gz;subdir=aspnet-${PV}"
+SRC_URI = "https://builds.dotnet.microsoft.com/dotnet/aspnetcore/Runtime/8.0.12/aspnetcore-runtime-8.0.12-linux-arm64.tar.gz;subdir=dotnet-${PV}"
 
 # SHA-512 hash is '9323f6584bf98500fe023009dea5b90e49bbb34cdcea0868e8d18c2fe260b087315438ca2df783f259003c1a0ee31f2d735c8cea85c2c4fb04f6dafe05384531'
 

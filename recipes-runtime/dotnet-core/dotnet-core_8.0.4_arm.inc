@@ -4,7 +4,7 @@
 # Copyright cjzzz 2024
 # Auto-generated using meta_dotnet_core_gen
 ###################################################################################################
-SRC_URI = "https://download.visualstudio.microsoft.com/download/pr/a299eeb3-a9c8-42d4-a0ff-61713365c715/0f4d4139df6c700efd4c0d172c2c28eb/dotnet-runtime-8.0.4-linux-arm.tar.gz;subdir=dotnet-${PV}"
+SRC_URI = "https://builds.dotnet.microsoft.com/dotnet/Runtime/8.0.4/dotnet-runtime-8.0.4-linux-arm.tar.gz;subdir=dotnet-${PV}"
 
 # SHA-512 hash is '4194840a6f1235808d1f1f4ff42046b6f11584c64fca65eb54b65c4dd924400679ae9e1f20efe582dda958f1838c5c125eb72da1d2fdcdd8628dcc20c35c6b88'
 
