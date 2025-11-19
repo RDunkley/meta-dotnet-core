@@ -226,3 +226,29 @@ libc.so.6
 ld-linux-x86-64.so.2
 librt.so.1
 liblttng-ust.so.0
+
+### 4. Adding a New Major Version of the Debugger
+Same as above download the new version, extract to a folder and run the 'list_deps.sh' script.
+
+#### 17.x
+ld-linux-x86-64.so.2
+libc.so.6
+libdl.so.2
+libgcc.s.so.1
+libm.so.6
+libpthread.so.0
+librt.so.1
+libstdc++.so.6
+libz.so.1
+linux-vdso.so.1
+
+#### 18.x
+ld-linux-x86-64.so.2
+libc.so.6
+libdl.so.2
+libgcc.s.so.1
+libm.so.6
+libpthread.so.0
+librt.so.1
+libstdc++.so.6
+linux-vdso.so.1
