@@ -214,3 +214,15 @@ libc.so.6
 ld-linux-x86-64.so.2
 librt.so.1
 liblttng-ust.so.0
+
+#### 10.0
+linux-vdso.so.1
+libpthread.so.0
+libdl.so.2
+libstdc++.so.6
+libm.so.6
+libgcc.s.so.1
+libc.so.6
+ld-linux-x86-64.so.2
+librt.so.1
+liblttng-ust.so.0
