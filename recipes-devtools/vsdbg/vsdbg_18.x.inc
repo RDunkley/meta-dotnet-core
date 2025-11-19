@@ -1,7 +1,7 @@
 ###################################################################################################
 # Contains additional parameters for the recipe to download the Visual Studio Remote debugger for
-# all 17.x versions.
-# Copyright Richard Dunkley, Sequent Logic LLC 2022
+# all 18.x versions.
+# Copyright Richard Dunkley, Sequent Logic LLC 2025
 ###################################################################################################
 DESCRIPTION = "This does not build this version, it only pulls the binaries from Microsoft"
 BUGTRACKER = "https://visualstudio.microsoft.com/"
@@ -18,9 +18,7 @@ S = "${WORKDIR}/vsdbg-${PV}"
 
 require recipes-devtools/vsdbg/vsdbg_license.inc
 
-DEPENDS = "zlib"
-RDEPENDS:${PN} = "openssh openssh-sftp-server icu zlib"
-#RDEPENDS:${PN} = "openssh openssh-sftp-server icu lttng-tools lttng-ust zlib curl libcurl libgssglue libgssapi-krb5"
+RDEPENDS:${PN} = "openssh openssh-sftp-server icu"
 
 INSANE_SKIP:${PN} += "already-stripped libdir textrel"
 
