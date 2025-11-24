@@ -46,7 +46,8 @@ do_install:prepend () {
 		install -m 0644 "$file" ${D}${datadir}/dotnet/shared/Microsoft.AspNetCore.App/${PV}/
 	done
 	for file in ${S}/shared/Microsoft.AspNetCore.App/${PV}/*.txt; do
-		install -m 0644 "$file" ${D}${datadir}/dotnet/shared/Microsoft.AspNetCore.App/${PV}/
+    	[ -e "$file" ] || continue
+    	install -m 0644 "$file" ${D}${datadir}/dotnet/shared/Microsoft.AspNetCore.App/${PV}/
 	done
 
 	install -d ${D}${datadir}/dotnet/shared/Microsoft.NETCore.App/${PV}/
