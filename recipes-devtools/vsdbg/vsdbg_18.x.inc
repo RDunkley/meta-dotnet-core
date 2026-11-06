@@ -14,7 +14,7 @@ SRC_URI += " \
 	file://vsdbg.sh \
 	"
 
-S = "${WORKDIR}/vsdbg-${PV}"
+S = "${UNPACKDIR}/vsdbg-${PV}"
 
 require recipes-devtools/vsdbg/vsdbg_license.inc
 
@@ -36,7 +36,7 @@ do_install:prepend () {
 	# Copy over the executable and then make a script to run it with certain
 	# environemental variables set.
 	install -m 0755 ${S}/vsdbg ${D}${ROOT_HOME}/.vs-debugger/vs2022/vsdbg2
-	install -m 0755 ${WORKDIR}/vsdbg.sh ${D}${ROOT_HOME}/.vs-debugger/vs2022/vsdbg
+	install -m 0755 ${UNPACKDIR}/vsdbg.sh ${D}${ROOT_HOME}/.vs-debugger/vs2022/vsdbg
 	echo '${ROOT_HOME}/.vs-debugger/vs2022/vsdbg2' >> ${D}${ROOT_HOME}/.vs-debugger/vs2022/vsdbg
 
 	install -m 0644 ${S}/createdump ${D}${ROOT_HOME}/.vs-debugger/vs2022/
@@ -44,7 +44,7 @@ do_install:prepend () {
 	install -m 0644 ${S}/license.txt ${D}${ROOT_HOME}/.vs-debugger/vs2022/
 	install -m 0644 ${S}/ThirdPartyNotices.txt ${D}${ROOT_HOME}/.vs-debugger/vs2022/
 	install -m 0644 ${S}/version.txt ${D}${ROOT_HOME}/.vs-debugger/vs2022/
-	install -m 0755 ${WORKDIR}/GetVsDbg.sh ${D}${ROOT_HOME}/.vs-debugger/
+	install -m 0755 ${UNPACKDIR}/GetVsDbg.sh ${D}${ROOT_HOME}/.vs-debugger/
 
 	install -d ${D}${ROOT_HOME}/.vs-debugger/vs2022/1028/
 	for file in ${S}/1028/*.dll; do

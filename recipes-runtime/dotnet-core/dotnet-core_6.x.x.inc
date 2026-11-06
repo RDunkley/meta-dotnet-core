@@ -7,7 +7,7 @@ DESCRIPTION = "This does not build this version, it only pulls the binaries from
 BUGTRACKER = "https://github.com/dotnet/core/issues"
 SECTION = "runtime"
 
-S = "${WORKDIR}/dotnet-${PV}"
+S = "${UNPACKDIR}/dotnet-${PV}"
 
 require recipes-runtime/dotnet-core/dotnet-core_mit_6.x.x.inc
 
