@@ -7,7 +7,7 @@ DESCRIPTION = "This does not build this version, it only pulls the binaries from
 BUGTRACKER = "https://github.com/aspnet/AspNetCore/issues"
 SECTION = "runtime"
 
-S = "${WORKDIR}/aspnet-${PV}"
+S = "${UNPACKDIR}/aspnet-${PV}"
 
 require recipes-runtime/aspnet-core/aspnet-core_mit_9.x.x.inc
 
