@@ -4,7 +4,7 @@
 # Copyright Richard Dunkley 2024
 # Auto-generated using meta_dotnet_core_gen
 ###################################################################################################
-SRC_URI = "https://builds.dotnet.microsoft.com/dotnet/aspnetcore/Runtime/8.0.5/aspnetcore-runtime-8.0.5-linux-arm.tar.gz;subdir=dotnet-${PV}"
+SRC_URI = "https://builds.dotnet.microsoft.com/dotnet/aspnetcore/Runtime/8.0.5/aspnetcore-runtime-8.0.5-linux-arm.tar.gz;subdir=aspnet-${PV}"
 
 # SHA-512 hash is 'f648c58794f217ac6faaaf67c17370658445655827d720335e38762541fec808d79aee0f87d0e27a6d3bb525c5a9ebcd3d94243190e7a5c126489f1840cd5373'
 
