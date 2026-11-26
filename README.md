@@ -4,13 +4,13 @@ BitBake recipes to use the pre-built binaries provided by Microsoft for the foll
 1. .Net Core 2.x, 3.x, (Use pre-honister branch)
 2. .Net 5.x, 6.x, 7.x, 8.x, and 9.x
 3. ASP .Net Core 2.x, 3.x (Use pre-honister branch)
-4. .Net 5.x, 6.x, 7.x, 8.x, 9.x, and 10.x
-3. Visual Studio Remote Debugger (2017, 2019, and 2022)
+4. .Net 5.x, 6.x, 7.x, 8.x, 9.x, 10.x, and 11.x
+3. Visual Studio Remote Debugger (2017, 2019, 2022, and 2026)
   
-## .Net Core 2.x, 3.x, and .Net 5.x, 6.x, 7.x, 8.x, 9.x, 10.x
+## .Net Core 2.x, 3.x, and .Net 5.x, 6.x, 7.x, 8.x, 9.x, 10.x, 11.x
 This package will place the .Net Core runtime binaries into the image under /usr/share/dotnet. The package only supports X64 and ARM (32-bit and 64-bit) architectures. It does not build the runtime from source. It only pulls the publicly available binaries. Add this package by adding "dotnet-core" to the CORE_IMAGE_EXTRA_INSTALL line of your local.conf file.
 
-## ASP .Net Core 2.x, 3.x, and .Net 5.x, 6.x, 7.x, 8.x, 9.x, 10.x
+## ASP .Net Core 2.x, 3.x, and .Net 5.x, 6.x, 7.x, 8.x, 9.x, 10.x, 11.x
 This package will place the ASP .Net Core runtime binaries into the image under /usr/share/dotnet. The package only supports X64 and ARM (32-bit and 64-bit) architectures. It does not build the runtime from source it only pulls the publicly available binaries. Add this package by adding "aspnet-core" to the CORE_IMAGE_EXTRA_INSTALL line of your local.conf file. This package also provides the .Net Core runtime environment so care should be taken to avoid adding this recipe and the .Net Core one (may add a PROVIDES virtual down the road).
 
 ## Visual Studio Remote Debugger
@@ -226,6 +226,18 @@ libc.so.6
 ld-linux-x86-64.so.2
 librt.so.1
 liblttng-ust.so.0
+
+#### 11.0
+ld-linux-x86-64.so.2
+libc.so.6
+libdl.so.2
+libgcc_s.so.1
+liblttng-ust.so.0
+libm.so.6
+libpthread.so.0
+librt.so.1
+libstdc++.so.6
+linux-vdso.so.1
 
 ### 4. Adding a New Major Version of the Debugger
 Same as above download the new version, extract to a folder and run the 'list_deps.sh' script.
