@@ -1,10 +1,10 @@
 ###################################################################################################
 # Contains the URL and checksums to download version 17.10.20209.7 of the ARM64 Visual Studio
 # debugger from Microsoft.
-# Copyright Richard Dunkley 2024
+# Copyright Richard Dunkley 2026
 # Auto-generated using meta_dotnet_core_gen
 ###################################################################################################
-SRC_URI += "https://vsdebugger-cyg0dxb6czfafzaz.b01.azurefd.net/vsdbg-17-10-20209-7/vsdbg-linux-arm64.zip;subdir=vsdbg-${PV};name=source"
+SRC_URI += "https://download.visualstudio.microsoft.com/download/pr/c94b5ca1-bd33-4a0c-bfb4-9c9a44ef97d1/vsdbg-17-10-20209-7-linux-arm64.zip;subdir=vsdbg-${PV};name=source"
 
 SRC_URI[source.md5sum] = "bb56e667b808d0e5d9f1863fc28f11b1"
 SRC_URI[source.sha256sum] = "b664efb2257f912e4708b968a6f0d5f4198c402881cdfbfca990c08f809f50eb"

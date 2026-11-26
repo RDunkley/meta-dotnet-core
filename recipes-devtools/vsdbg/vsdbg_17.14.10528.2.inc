@@ -6,9 +6,10 @@
 SUMMARY = "Contains the binaries for Microsoft's Visual Studio Remote Debugger for Linux"
 HOMEPAGE = "https://visualstudio.microsoft.com/"
 
-SRC_URI += "https://vsdebugger.blob.core.windows.net/vsdbg-17-14-10528-2/GetVsDbg.sh;name=script"
-SRC_URI[script.md5sum] = "38b9b436fc5e9d69e62c0b80fddc6594"
-SRC_URI[script.sha256sum] = "97200a58afb1209fbd2ff6baefdbdb4661dc1fd83acdb669bbfd44bb70395f59"
+# Unversioned URL: the checksums change when Microsoft updates the script. Re-run meta_dotnet_core_gen to update them.
+SRC_URI += "https://aka.ms/getvsdbgsh;downloadfilename=GetVsDbg.sh;name=script"
+SRC_URI[script.md5sum] = "ee6947cd78dc7eadd7d5668a963a4839"
+SRC_URI[script.sha256sum] = "a20d6294a53695bddad3a3fd578e1ce8d8b15e76eda09959a2e723ac9959caef"
 
 RDEPENDS:${PN} += "procps openssh-sftp-server"
 
